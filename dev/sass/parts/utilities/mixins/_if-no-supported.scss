@@ -1,0 +1,22 @@
+//==============================================
+// Layout/if supported or not supported
+//==============================================
+
+// Feature Detection
+//
+// $feature - Feature-specific class, i.e. `cssgradients`.
+// @usage - `@include supported($feature)`
+// @usage - `@include not-supported($feature)`
+
+@mixin supported($feature) {
+  .#{$feature} & {
+    @content;
+  }
+}
+
+@mixin not-supported($feature) {
+  .no-js &,
+  .no-#{$feature} & {
+    @content;
+  }
+}

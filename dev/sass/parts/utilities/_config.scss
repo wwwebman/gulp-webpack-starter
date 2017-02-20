@@ -1,0 +1,85 @@
+// ===================================================================
+// Grid system
+// ===================================================================
+// [B] - Bootstrap usage
+
+// Configuration:
+// ********************************************
+$responsive-app: 			true; //TODO
+// ********************************************
+
+$grid-gutter-width:         30px !default;
+$grid-columns:              12 !default;
+
+// ===================================================================
+// BREAKPOINTS - [B]
+// ===================================================================
+// [B] for mobile first
+$screen-xs-min:              480px !default;
+$screen-sm-min:              768px !default;
+$screen-md-min:              992px !default;
+$screen-lg-min:              1200px !default;
+
+// [B] formobile last
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              1920px !default;
+
+// [B] container sizes
+$container-sm:               (720px + $grid-gutter-width) !default;
+$container-md:               (940px + $grid-gutter-width) !default;
+$container-lg:               (1140px + $grid-gutter-width) !default;
+
+// List of [B]
+// $breakpoints - {map}
+$breakpoints: (
+	xs: $screen-xs-min,
+	sm: $screen-sm-min,
+	md: $screen-md-min,
+	lg: $screen-lg-min,
+	xl: $screen-lg-max
+) !default;
+
+// ===================================================================
+// MEDIA QUERIES
+// ===================================================================
+// $media-query - {map}
+$mq: (
+	p: "print", 
+	s: "screen",
+	ld: "(orientation: landscape)",
+	pt: "(orientation: portrait)",
+	hd: "handheld",
+    r2: ("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi)"),
+    r3: ("(-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx), (min-resolution: 300dpi)"),
+    ar169: ("device-aspect-ratio: 16/9")
+) !default;
+
+// ===================================================================
+// z-index
+// ===================================================================
+// $zindex - {map}
+$zindex: (
+	null: 				0,
+	back: 				-1000,
+	default: 			1,
+	base: 				1000,
+	footer: 			1100,
+	header: 			1000,
+	sidebar: 			900,
+	drop: 				1300,
+	overlay: 			1400,
+	top: 				1000,
+	modal: 				1500
+) !default;
+
+// ===================================================================
+// Prefixes
+// ===================================================================
+// $prefix-list - {map}
+$prefix-list: (webkit, moz, ms, o);
+
+@if($responsive-app == false) {
+	$viewport-width:		$container-lg !default;
+}

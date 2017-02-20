@@ -1,0 +1,27 @@
+//==============================================
+// Mixins/Inputs-Buttons
+//==============================================
+
+// Inputs
+@mixin int-focus($color: $input-border-focus) {
+  $color-rgba: rgba(red($color), green($color), blue($color), .6);
+  &:focus {
+    border-color: $color;
+    outline: 0;
+   @content;
+  }
+}
+
+// Button
+@mixin m-btn-size($padding-base-vertical: $padding-base-vertical, $padding-base-horisontal: $padding-base-horizontal, $font-size-base: $font-size-base, $line-height-base: $line-height-base, $btn-border-radius-base: $btn-border-radius-base) {
+  border-radius: $btn-border-radius-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  padding: $padding-base-vertical $padding-base-horisontal;
+}
+
+@mixin reset-button {
+  background: none;
+  border: 0;
+  outline: none;
+}

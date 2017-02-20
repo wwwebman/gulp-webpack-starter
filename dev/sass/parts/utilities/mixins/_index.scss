@@ -1,0 +1,20 @@
+//==============================================
+// Layout/Manifest of Mixins
+//==============================================
+
+// @usage - `@include mixinName or +tab in your sublime`
+@import "filters";
+@import "hide";
+@import "btn-inputs";
+@import "clearfix";
+@import "media";
+@import "centered";
+@import "typography";
+@import "resets";
+@import "hover";
+@import "if-no-supported";
+
+// @usage - include z($zindex-object-property-from-_config.scss)
+@mixin z($zindex) {
+	z-index: -w-z($zindex);
+}

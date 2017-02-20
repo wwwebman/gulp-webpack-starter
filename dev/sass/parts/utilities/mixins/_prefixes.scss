@@ -1,0 +1,12 @@
+//==============================================
+// Mixins/Prefixes
+//==============================================
+
+// Mixin to prefix a property
+// @parameters: $property, $value, $prefixes - {map}
+@mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}

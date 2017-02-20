@@ -1,0 +1,87 @@
+//==============================================
+// Utilites/Typography
+//==============================================
+
+// Links
+// =============================================
+$link-hover-decoration: 		none !default;
+
+// Border radius
+// =============================================
+$border-radius-base:        	0 !default;
+$border-radius-medium:       	6px !default;
+$border-radius-small:       	3px !default;
+
+// Animation
+// =============================================
+$timeline-base: 				.4s !default;
+$timeline-fast: 				.2s !default;
+$timeline-slow: 				.8s !default;
+
+// Border
+// =============================================
+$b-s-base: 						 1px;
+$b-s-medium: 					 $b-s-base*3;
+$b-s-big: 					 	 $b-s-medium*2;
+
+// Cursor controls
+// =============================================
+$cursor-active:   				 pointer !default;
+$cursor-disabled:  				 not-allowed !default;
+$cursor-resize:           		 col-resize !default;
+
+// Padding/margin
+// =============================================
+$padding: 					 	$grid-gutter-width/2 !default;
+$margin: 					 	$grid-gutter-width/2 !default;
+
+// Padding for elements
+// =============================================
+$padding-base-vertical:     	 6px !default;
+$padding-base-horizontal:   	 12px !default;
+
+$padding-large-vertical:    	 10px !default;
+$padding-large-horizontal:  	 16px !default;
+
+$padding-small-vertical:    	 5px !default;
+$padding-small-horizontal:  	 10px !default;
+
+// Buttons
+// =============================================
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              #fff !default;
+$btn-default-bg:                 $color-accent !default;
+$btn-default-border:             darken($color-accent, 1%) !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $color-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+// Custom border-radius
+// =============================================
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-medium:       $border-radius-medium !default;
+$btn-border-radius-small:        $border-radius-small !default;
+
+// Inputs
+// =============================================
+$input-bg:                       #fff !default;
+$input-bg-disabled:              $color-primary !default;
+$input-color:                    $color-primary !default;
+$input-border:                   #ccc !default;
+
+// Custom input-border-radius
+// =============================================
+$input-border-radius-base:       $border-radius-base !default;
+$input-border-radius-medium:     $border-radius-medium !default;
+$input-border-radius-small:      $border-radius-small !default;
+
+$input-border-focus:             #66afe9 !default;
+$input-color-placeholder:        #999 !default;
+
+// Count input height
+// =============================================
+$input-height-base:              ($line-height-count + ($padding-base-vertical * 2) + 2) !default;
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;

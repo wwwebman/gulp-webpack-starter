@@ -1,0 +1,35 @@
+// Color Palette
+// Based on the official Sass styleguide
+
+// ===================================================================
+// Descriptive colors
+// ===================================================================
+$black:                     #000 !default;
+$black-light:               lighten(#000, 25%) !default;
+$white:                     #fff !default;
+$white-darken:				darken($white, 35%);
+$red:						red !default;
+
+// ===================================================================
+// Theme colors
+// ===================================================================
+$color-primary:             $black !default;
+$color-accent:				$red !default;
+
+$color-shadow:				rgba($black, .125);
+
+// ===================================================================
+// Main elements colors
+// ===================================================================
+$text-link: 				$color-accent !default;
+$color-text-main: 			$black-light !default;
+$color-headers: 			$black-light !default;
+
+// links
+$color-link:                $color-accent !default;
+$color-link-hover:          darken($color-accent, 10%) !default;
+$color-link-visited:		$color-accent !default;
+$color-link-bg-hover:       $color-accent !default;
+
+// background
+$color-background:      	$white !default;

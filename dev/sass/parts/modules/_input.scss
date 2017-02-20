@@ -1,0 +1,91 @@
+//==============================================
+// Module/inputs, forms, textarea
+//==============================================
+
+.int {
+  background-color: darken($white, 5%);
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border-radius: 0;
+  border: 0;
+  border: $b-s-base solid $input-border;
+  color: $input-color;
+  display: block;
+  padding: 10px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  transition: all .3s;
+  width: 100%;
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    border: 0;
+    background-color: transparent;
+  }
+  outline: none;
+  &:focus {
+    border-color: $color-accent;
+  }
+}
+.int-group {
+  border-collapse: separate;
+  display: table;
+  margin-bottom: $margin;
+  position: relative;
+  width: 100%;
+  .stuck-element {
+    border: $b-s-base solid $input-border;
+    display: table-cell;
+    line-height: $line-height-base;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    vertical-align: middle;
+    white-space: nowrap;
+    &::first-child {
+      border-right: 0;
+    }
+  }
+  .btn {
+    display: table-cell;
+    float: left;
+    margin-left: -1px;
+    vertical-align: middle;
+  }
+  .int {
+    display: table-cell;
+    float: left;
+    vertical-align: middle;
+    &::placeholder {
+      color: $input-color-placeholder;
+    }
+  }
+}
+.int-group-btn {
+  display: table-cell;
+  font-size: 0;
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+}
+.int-ico {
+  background: $input-bg;
+  color: $input-color;
+  height: $input-height-base;
+  line-height: $line-height-base;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: $input-height-base*1.2;
+  @include z(base);
+}
+
+// *
+// Textarea
+// * 
+textarea.int {
+  font-size: .9em;
+  height: auto;
+  letter-spacing: .02em;
+  line-height: $line-height-base*1.5;
+  margin-bottom: $margin;
+  max-width: 100%;
+}

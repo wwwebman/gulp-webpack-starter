@@ -1,0 +1,17 @@
+//==============================================
+// Layout/Manifest of Layout
+//==============================================
+
+// Layout Rules
+
+// Naming convention:
+// The class-based selectors, however, do use an l- prefix.
+
+// Elements: header, main content, footer, sidebar and so on.
+
+// Read more - https://smacss.com/book/type-layout
+
+@import 'header';
+@import 'aside';
+@import 'sections';
+@import 'footer';

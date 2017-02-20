@@ -1,0 +1,23 @@
+//==============================================
+// Mixins/Typography
+//==============================================
+
+// Generate Headlines with type-scale.com algorithm
+@mixin H($font-size, $scale) {
+  $value: 1;
+  @for $i from 4 through 1 {
+    .h#{$i}, h#{$i} {
+      $value: $scale * $value;
+      font-size: ($value) + em;
+      @content;
+    }
+  }
+}
+
+@mixin list-h($topclass:"", $rewclass:"") {
+  @for $i from 4 through 1 {
+  	#{$topclass} .h#{$i}#{$rewclass}, #{$topclass} h#{$i}#{$rewclass} {
+     	@content;
+    }
+  }
+}
