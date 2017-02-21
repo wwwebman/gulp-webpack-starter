@@ -28,7 +28,7 @@ gulp.task("svg", function(){
         cssFile: path.join('../../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
         baseSize: 16,
         preview: false,
-        svgPath: '../img/%f',
+        svgPath: '../img/svg/%f',
         svg: {
             sprite: "sprite.svg"
         }
