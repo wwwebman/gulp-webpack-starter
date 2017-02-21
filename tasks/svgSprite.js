@@ -12,17 +12,14 @@ var svgSprite   = require('gulp-svg-sprites');
 var path        = require("path");
 
 var config      = require("../config");
-var mode        = require("./helpers/mode");	
-
-
-console.log(path.resolve(config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'));
+var mode        = require("./helpers/mode");
 
 gulp.task("svg", function(){
 	return gulp.src(path.join(config.root.dev, config.svg.dev, '*.svg'))
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(svgSprite({
         /**
-         * Put css file in dev/sass/vandor/_sprite to make concatenation > main.css
+         * We need to Put CSS file in dev/sass/vandor/_sprite for bundling
          * @type - fix
          */
         cssFile: path.join('../../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
