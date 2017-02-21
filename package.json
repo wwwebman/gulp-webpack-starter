@@ -44,7 +44,7 @@
     "gulp-shell": "^0.5.2",
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-svg-sprites": "^4.0.2",
+    "gulp-svg-sprite": "^1.3.6",
     "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
