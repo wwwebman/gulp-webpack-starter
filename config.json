@@ -28,7 +28,7 @@
    },
    "svg": {
       "dev": "img/svg",
-      "dist": "assets/img/svg"
+      "dist": "assets/img"
    },
    "fonts": {
       "dev": "fonts",

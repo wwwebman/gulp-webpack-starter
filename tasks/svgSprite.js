@@ -18,7 +18,7 @@ var mode        = require("./helpers/mode");
 var svgConf = {
     shape: {
         spacing: { 
-            padding: 10
+            padding: 10 
         },
         dimension       : {
             maxWidth    : 32,
@@ -33,7 +33,7 @@ var svgConf = {
             prefix: '.icon-',
             bust: false,
             dest : './',
-            sprite: '../svg/sprite.svg',
+            sprite: '../img/svg/sprite.svg',
             render: {
                 scss: {
                     /**
@@ -46,6 +46,8 @@ var svgConf = {
         }
     }
 }
+
+// @Sass mixin - https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass/
 
 gulp.task("svg", function(){
     return gulp.src(path.join(config.root.dev, config.svg.dev, '*.svg'))
