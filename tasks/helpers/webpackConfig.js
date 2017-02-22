@@ -41,7 +41,13 @@ module.exports = function(extractVendorLibs){
 			modules: [JS_DEV, "node_modules", "bower_components"],
 		    extensions: config.js.extensions
 		},
-		plugins: []
+		plugins: [
+			new webpack.ProvidePlugin({
+		        jQuery: 'jquery',
+		        $: 'jquery',
+		        jquery: 'jquery'
+		    })
+		]
 	};
 
 	if (mode.production) {
