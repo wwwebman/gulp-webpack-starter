@@ -40,7 +40,7 @@ var svgConf = {
                      * Put SCSS file in dev/sass/vandor/_sprite to make concatenation > main.css
                      * @type - fix
                      */
-                    dest : path.join('../../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
+                    dest : path.join('../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
                 }
             }
         }
