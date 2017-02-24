@@ -65,6 +65,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
+    "fancybox": "^3.0.0",
     "jquery": "^3.1.1",
     "normalize-css": "^2.3.1"
   }

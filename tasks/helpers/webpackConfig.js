@@ -44,8 +44,7 @@ module.exports = function(extractVendorLibs){
 		plugins: [
 			new webpack.ProvidePlugin({
 		        jQuery: 'jquery',
-		        $: 'jquery',
-		        jquery: 'jquery'
+		        $: 'jquery'
 		    })
 		]
 	};
