@@ -13,7 +13,7 @@ var config      = require("../config");
 var mode        = require("./helpers/mode");	
 
 gulp.task('fonts', function() {
-	return gulp.src(path.join(config.root.dev, config.fonts.dev))
+	return gulp.src(path.join(config.root.dev, config.fonts.dev, config.fonts.extensions))
 	.pipe(gulp.dest(path.join(config.root.dist, config.fonts.dist)))
 	.pipe(reload({stream: true}));
 });
