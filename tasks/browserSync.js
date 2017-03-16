@@ -18,16 +18,15 @@ var live = function(){
 		tunnel: false,
 		server: {
 			baseDir: config.root.dist,
-			middleware: [
-		    	webpackDevMiddleware(compiler, {
-				    noInfo: true,
-				    publicPath: path.join('/', webpackConfig.output.publicPath),
-				    stats: 'errors-only'
-				}),
-				webpackHotMiddleware(compiler)
-		    ]
 		},
-		browser: process.platform === 'linux' ? 'chromium-browser' : 'google chrome',
+		middleware: [
+	    	webpackDevMiddleware(compiler, {
+			    noInfo: true,
+			    publicPath: path.join('/', webpackConfig.output.publicPath),
+			    stats: 'errors-only'
+			}),
+			webpackHotMiddleware(compiler)
+		],
 	    port: 3000,
 	    logPrefix: "webman.pro"
 	};
