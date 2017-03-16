@@ -9,15 +9,20 @@ var fileinclude = require('gulp-file-include');
 var gulpif      = require('gulp-if');
 var notify      = require("gulp-notify");
 var path        = require('path');
-
-
-
 var plumber     = require('gulp-plumber');
+
+var glob =require('glob');
+
 
 var config      = require("../config");
 var mode        = require("./helpers/mode");
 
-gulp.task('html', function() {
+
+gulp.task('php', function(){
+	reload(path.resolve(config.root.dev, config.php.dev));
+});
+
+gulp.task('html', function(){
 	return gulp.src(path.join(config.root.dev, config.html.dev, './*.html'))
 	/**
 	 * @fixme - Cache. gulp-cached/gulp-newer plugins can't detect changes at ./html/templates/*, because i use gulp-file-include. 

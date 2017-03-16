@@ -9,10 +9,16 @@ var path   = require('path');
 var config = require('../config');
 
 var watchTask = function(){
-	var folders = ['html', 'css', 'img', 'svg', 'static', 'fonts'];
+	var folders = ['css', 'img', 'svg', 'static', 'fonts', 'js'];
+	
+	config.proxy
+	? folders.unshift('php')
+	: folders.unshift('html')
+
+	console.log(folders, path.resolve(config.root.dev, config.php.dev));
 
     folders.forEach(function(task) {
-        watch(path.join(config.root.dev, config[task].dev), function() {
+        watch(path.resolve(config.root.dev, config[task].dev), function() {
             gulp.start(task);
         });
     });

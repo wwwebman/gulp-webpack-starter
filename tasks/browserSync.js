@@ -13,23 +13,32 @@ var path                 = require('path');
 
 var config = require("../config");
 
+var serverConfig = {
+	logPrefix: "webman.pro",
+    port: 3000,
+	ui: {
+		port: 3001
+	},
+	middleware: [
+    	webpackDevMiddleware(compiler, {
+		    noInfo: true,
+		    publicPath: path.join('/', webpackConfig.output.publicPath),
+		    stats: 'errors-only'
+		}),
+		webpackHotMiddleware(compiler)
+	]
+};
+// Switch to Proxy/Server
+config.proxy 
+? serverConfig.proxy = config.proxy
+: Object.assign(serverConfig, {
+	server: {
+		baseDir: config.root.dist,
+	},
+	tunnel: false
+})
+
 var live = function(){
-	var serverConfig = {
-		tunnel: false,
-		server: {
-			baseDir: config.root.dist,
-		},
-		middleware: [
-	    	webpackDevMiddleware(compiler, {
-			    noInfo: true,
-			    publicPath: path.join('/', webpackConfig.output.publicPath),
-			    stats: 'errors-only'
-			}),
-			webpackHotMiddleware(compiler)
-		],
-	    port: 3000,
-	    logPrefix: "webman.pro"
-	};
 	browserSync.init(serverConfig);
 };
 
