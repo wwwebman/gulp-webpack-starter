@@ -14,7 +14,6 @@ var path        = require("path");
 var config      = require("../config");
 var mode        = require("./helpers/mode");
 
-
 var svgConf = {
     shape: {
         spacing: { 
@@ -37,7 +36,7 @@ var svgConf = {
             render: {
                 scss: {
                     /**
-                     * Put SCSS file in dev/sass/vandor/_sprite to make concatenation > main.css
+                     * This one put SCSS file to dev/sass/vendor/_sprite.scss to have just one bundle.css
                      * @type - fix
                      */
                     dest : path.join('../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
@@ -47,8 +46,6 @@ var svgConf = {
     }
 }
 
-// @Sass mixin - https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass/
-
 gulp.task("svg", function(){
     return gulp.src(path.join(config.root.dev, config.svg.dev, '*.svg'))
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -56,3 +53,8 @@ gulp.task("svg", function(){
     .pipe(gulp.dest(path.join(config.root.dist, config.svg.dist)))
     .pipe(reload({stream: true}));
 });
+
+/**
+ * Mixin - for making sprites more PRO
+ * @source - https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass
+ */

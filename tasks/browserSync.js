@@ -11,31 +11,37 @@ var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var path                 = require('path');
 
-var config = require("../config");
+var mode                 = require('./helpers/mode');
+var config               = require("../config");
 
 var serverConfig = {
 	logPrefix: "webman.pro",
     port: 3000,
 	ui: {
 		port: 3001
-	},
-	middleware: [
-    	webpackDevMiddleware(compiler, {
-		    noInfo: true,
-		    publicPath: path.join('/', webpackConfig.output.publicPath),
-		    stats: 'errors-only'
-		}),
-		webpackHotMiddleware(compiler)
-	]
+	}
 };
-// Switch to Proxy/Server
+
+
+// Run middleware only on development mode
+if(!mode.production)
+serverConfig.middleware = [
+	webpackDevMiddleware(compiler, {
+	    noInfo: true,
+	    publicPath: path.join('/', webpackConfig.output.publicPath),
+	    stats: 'errors-only'
+	}),
+	webpackHotMiddleware(compiler)
+]
+
+// Change config when we have Server
 config.proxy 
 ? serverConfig.proxy = config.proxy
 : Object.assign(serverConfig, {
 	server: {
 		baseDir: config.root.dist,
 	},
-	tunnel: false
+	tunnel: false,
 })
 
 var live = function(){
