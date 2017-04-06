@@ -1,6 +1,5 @@
 /**
- * Configuration for Webpack bandler.
- * Based on Webpack 2 documentation
+ * Configuration for Webpack2 bandler.
  */
 
 var webpack = require('webpack');
@@ -17,18 +16,18 @@ module.exports = function(extractVendorLibs){
 		context: JS_DEV,
 		entry: {
 			app: [
-				"./main.js"
+				'./main.js'
 			]
 		},
 		module: {
-			loaders: [
+			rules: [
 			    {
-			      test: /\.js$/,
-			      exclude: /node_modules/,
-			      loader: 'babel-loader',
-			      query: {
-			        presets: ["es2015"]
-			      }
+					test: /\.js$/,
+					exclude: path.resolve(__dirname, "node_modules/"),
+					loader: 'babel-loader',
+					options: {
+						presets: [['es2015', {modules: false}]]
+					}
 			    }
 		  	]
 		},
@@ -38,7 +37,7 @@ module.exports = function(extractVendorLibs){
 			publicPath: config.js.dist
 		},
 		resolve: {
-			modules: [JS_DEV, "node_modules", "bower_components"],
+			modules: [JS_DEV, 'node_modules', 'bower_components'],
 		    extensions: config.js.extensions
 		},
 		plugins: [
