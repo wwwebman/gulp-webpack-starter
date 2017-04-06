@@ -13,8 +13,8 @@ var defaultTask = function(cb) {
 	mode.show();
 
 	mode.production ? 
-	runSequence('clean', 'bower', assets, ['html', 'css', 'js'], 'size', cb) 
-	: runSequence('bower', assets, ['html', 'css'], 'watch', cb);
+	runSequence('clean', assets, ['html', 'css', 'js'], 'size', cb) 
+	: runSequence(assets, ['html', 'css'], 'watch', cb);
 };
 
 gulp.task('default', defaultTask);

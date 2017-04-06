@@ -1,1 +1,28 @@
-// Spite SASS/CSS will be generetaed here
+.icon {
+	background: url("../img/svg/sprite.svg") no-repeat;
+}
+
+.icon-facebook {
+	background-position: 0 0;
+	width: 52px;
+	height: 52px;
+}
+
+.icon-google-plus {
+	background-position: 0 33.333333333333336%;
+	width: 52px;
+	height: 52px;
+}
+
+.icon-linkedin {
+	background-position: 0 66.66666666666667%;
+	width: 52px;
+	height: 52px;
+}
+
+.icon-youtube {
+	background-position: 0 100%;
+	width: 52px;
+	height: 52px;
+}
+

@@ -13,9 +13,7 @@ var watchTask = function(){
 	
 	config.proxy
 	? folders.unshift('php')
-	: folders.unshift('html')
-
-	console.log(folders, path.resolve(config.root.dev, config.php.dev));
+	: folders.unshift('html');
 
     folders.forEach(function(task) {
         watch(path.resolve(config.root.dev, config[task].dev), function() {
