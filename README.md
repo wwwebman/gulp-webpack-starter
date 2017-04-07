@@ -14,15 +14,14 @@ __Gulp Webpack Starter__ - cool task runner for building static HTML templates. 
 ```bash
 git clone https://github.com/wwwebman/gulp-webpack-starter project_name
 npm i
-bower i
 npm run dev
 ```
 
-Now you have demo. Remove html tags and start you own project.
+Now you have demo. Remove HTML and start you own project.
 
 
 ## Config
-Your can make some modification in ./config.json file (e.g. ftp server configuration)
+Your can make some modification in ./config.json file (e.g. ftp configuration)
 
 
 ## Aliases
@@ -40,18 +39,11 @@ npm run production
 ```
 
 > Deploy - push production version on remote server.
+> Configurate
 
 ```bash
 npm run deploy
 ```
 
 ---
----
-
-## @Todo
-
-* 1. Docker integration (Wordpress image)
-* 2. Bower & bower task will be removed
-
----
-Visit author webpage [webman.pro](http://webman.pro/)
+Author - [webman.pro](http://webman.pro/)
