@@ -49,6 +49,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "imagemin-pngquant": "^4.2.2",
+    "jest": "^20.0.0",
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
     "main-bower-files": "^2.9.0",
