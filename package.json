@@ -56,7 +56,7 @@
     "merge-stream": "^1.0.0",
     "minimatch": "^3.0.2",
     "path": "^0.12.7",
-    "require-dir": "0.3.0",
+    "require-dir": "^0.3.2",
     "rimraf": "^2.4.3",
     "run-sequence": "^1.2.2",
     "vinyl-ftp": "^0.6.0",
