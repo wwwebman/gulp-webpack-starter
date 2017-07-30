@@ -40,12 +40,7 @@ module.exports = function(extractVendorLibs){
 			modules: [JS_DEV, 'node_modules', 'bower_components'],
 		    extensions: config.js.extensions
 		},
-		plugins: [
-			new webpack.ProvidePlugin({
-		        jQuery: 'jquery',
-		        $: 'jquery'
-		    })
-		]
+		plugins: []
 	};
 
 	if (mode.production) {
@@ -71,5 +66,6 @@ module.exports = function(extractVendorLibs){
 			})
 		);
     }
+
     return webpackConfig;
 };
