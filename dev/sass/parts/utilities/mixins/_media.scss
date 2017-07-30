@@ -2,7 +2,8 @@
 // Mixins/GENERATE MEDIA QUERIES
 //==============================================
 
-// @requires - ../_functions.scss 
+// @requires - ../_functions.scss
+
 @mixin media($conditions...) {
 	@for $i from 1 through length($conditions) {
 		$conditions: set-nth($conditions, $i, -w-parse-expression(nth($conditions, $i)));	

@@ -10,13 +10,6 @@
   white-space: nowrap;
 }
 
-// Hidden
-// Hide from both screenreaders and browsers
-@mixin disp-none {
-  display: none !important;
-  visibility: hidden;
-}
-
 // Visually Hidden
 // Hide only visually, but have it available for screenreaders
 @mixin hidden {

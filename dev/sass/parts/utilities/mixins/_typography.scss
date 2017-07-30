@@ -13,11 +13,3 @@
     }
   }
 }
-
-@mixin list-h($topclass:"", $rewclass:"") {
-  @for $i from 4 through 1 {
-  	#{$topclass} .h#{$i}#{$rewclass}, #{$topclass} h#{$i}#{$rewclass} {
-     	@content;
-    }
-  }
-}

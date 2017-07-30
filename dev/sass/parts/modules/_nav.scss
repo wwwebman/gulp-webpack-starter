@@ -3,7 +3,7 @@
 //==============================================
 
 .m-nav {
-	padding: $padding 0;
+	padding: $padding;
 	ul {
 		@include reset-list;
 	}
