@@ -7,3 +7,5 @@ npm-debug.log
 /*.html
 .DS_Store
 .idea
+
+dev/sass/parts/vendor/_sprite.scss
