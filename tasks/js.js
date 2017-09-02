@@ -31,9 +31,6 @@ gulp.task('js', function() {
         path.join(config.root.dev, config.js.vendor, 'popper.js'),
         path.join(config.root.dev, config.js.vendor, 'bootstrap.js'),
         path.join(config.root.dev, config.js.vendor, 'jquery.equalheights.js'),
-        path.join(config.root.dev, config.js.vendor, 'swiper.jquery.min.js'),
-        path.join(config.root.dev, config.js.vendor, 'jquery.fancybox.min.js'),
-        path.join(config.root.dev, config.js.vendor, 'masonry.pkgd.min.js'),
       ]
     )
     .pipe(gulpif(!mode.production, sourcemaps.init()))
