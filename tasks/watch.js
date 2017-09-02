@@ -2,15 +2,15 @@
  * WATCHER
  */
 
-var gulp   = require ('gulp');
-var watch  = require ('gulp-watch');
+var gulp   = require('gulp');
+var watch  = require('gulp-watch');
 var path   = require('path');
 
 var config = require('../config');
 
 var watchTask = function(){
 	var folders = ['css', 'img', 'svg', 'static', 'fonts', 'js'];
-	
+
 	config.proxy
 	? folders.unshift('php')
 	: folders.unshift('html');

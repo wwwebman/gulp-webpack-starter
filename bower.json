@@ -1,0 +1,21 @@
+{
+  "name": "gulp-webpack-starter",
+  "description": "Gulp webpack starter",
+  "main": "",
+  "authors": [
+    "MaximusFT"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MaximusFT/ma-x.im",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "font-awesome": "*",
+    "jQuery.equalHeights": "jquery.equalheights#^1.5.2"
+  }
+}

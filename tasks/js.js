@@ -2,26 +2,46 @@
  * Build JS
  */
 
-var gulp          = require('gulp');
-var webpack       = require('webpack');
-var gutil         = require('gulp-util');
+var gulp         = require('gulp');
+var browserSync  = require('browser-sync');
+var reload       = browserSync.reload;
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
+var gulpif       = require('gulp-if');
+var merge        = require('merge-stream');
+var sourcemaps   = require('gulp-sourcemaps');
+var path         = require('path');
 
-var webpackConfig = require('./helpers/webpackConfig')();
-var mode          = require('./helpers/mode');
-var log           = require('./helpers/logger');
+var config       = require('../config');
+var mode         = require('./helpers/mode');
 
-gulp.task('js', function(callback){
-	webpack(webpackConfig, function(err, stats) {
-        if(err) new log('Webpack', err).error();
-        new log('Webpack',stats.toString({
-            assets: true,
-            chunks: false,
-            chunkModules: false,
-            colors: true,
-            hash: false,
-            timings: true,
-            version: false
-        })).info();
-        callback();
-    });
+gulp.task('js', function() {
+  var app = gulp.src(
+      path.join(config.root.dev, config.js.app, 'app.js')
+    )
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
+    .pipe(gulpif(!mode.production, uglify()))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.join(config.root.dist, config.js.dist)))
+    .pipe(reload({stream: true}));
+
+  var vendor = gulp.src([
+        path.join(config.root.dev, config.js.vendor, 'jquery.js'),
+        path.join(config.root.dev, config.js.vendor, 'popper.js'),
+        path.join(config.root.dev, config.js.vendor, 'bootstrap.js'),
+        path.join(config.root.dev, config.js.vendor, 'jquery.equalheights.js'),
+        path.join(config.root.dev, config.js.vendor, 'swiper.jquery.min.js'),
+        path.join(config.root.dev, config.js.vendor, 'jquery.fancybox.min.js'),
+        path.join(config.root.dev, config.js.vendor, 'masonry.pkgd.min.js'),
+      ]
+    )
+    .pipe(gulpif(!mode.production, sourcemaps.init()))
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(mode.production, uglify()))
+    .pipe(gulpif(!mode.production, sourcemaps.write()))
+    .pipe(gulp.dest(path.join(config.root.dist, config.js.dist)))
+    .pipe(reload({stream: true}));
+
+    return merge(app, vendor);
 });
