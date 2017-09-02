@@ -2,7 +2,7 @@
  * Size report
  */
 
-var gulp      = require ('gulp');
+var gulp      = require('gulp');
 var sizereport= require('gulp-sizereport');
 var path      = require('path');
 

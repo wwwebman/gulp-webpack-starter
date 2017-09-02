@@ -16,8 +16,8 @@ var mode        = require("./helpers/mode");
 
 var svgConf = {
     shape: {
-        spacing: { 
-            padding: 10 
+        spacing: {
+            padding: 10
         },
         dimension       : {
             maxWidth    : 32,
@@ -32,14 +32,14 @@ var svgConf = {
             prefix: '.icon-',
             bust: false,
             dest : './',
-            sprite: '../img/svg/sprite.svg',
+            sprite: '../images/svg/sprite.svg',
             render: {
                 scss: {
                     /**
                      * This one put SCSS file to dev/sass/vendor/_sprite.scss to have just one bundle.css
                      * @type - fix
                      */
-                    dest : path.join('../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
+                    // dest : path.join('../../../', config.root.dev, config.css.dev, 'parts/vendor/_sprite.scss'),
                 }
             }
         }

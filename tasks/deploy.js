@@ -32,7 +32,7 @@ var conn = ftp.create(connConf);
 gulp.task('deploy', function(cb){
 	var folderToPush = [path.join(config.root.dist + '/**')];
 	if (config.root.dist === './') folderToPush = ['./assets', '*.+(html|php)'];
-	
+
 	if (!mode.production) new log('Deploy Task', 'You can run Deploy Task only in Production Mode.\nUse: npm run deploy').error();
 
 	return gulp.src(folderToPush, {buffer: false })

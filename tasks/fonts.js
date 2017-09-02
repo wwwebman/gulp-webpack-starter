@@ -10,7 +10,7 @@ var notify      = require("gulp-notify");
 var plumber     = require('gulp-plumber');
 
 var config      = require("../config");
-var mode        = require("./helpers/mode");	
+var mode        = require("./helpers/mode");
 
 gulp.task('fonts', function() {
 	return gulp.src(path.join(config.root.dev, config.fonts.dev, config.fonts.extensions))

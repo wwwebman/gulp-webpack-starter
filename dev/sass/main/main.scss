@@ -1,0 +1,142 @@
+@charset 'utf-8';
+
+// ==========================================================================
+// $Utilities
+// ==========================================================================
+@import 'utilities/index';
+// @import 'icon/style'; // Icon font from icomoon.io
+
+// ==========================================================================
+// $Base
+// ==========================================================================
+body {
+	font-family: $font-family-open;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	color: $cBlack-light;
+	.inverse & {
+		color: $cWhite;
+	}
+}
+p {
+	color: $cBlack-light;
+	.inverse & {
+		color: $cWhite;
+	}
+}
+.inverse * {
+		color: $cWhite;
+}
+.bg-logo {
+	background-image: url('../images/logo.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.bg-photo {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	position: relative;
+	&:before {
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	& > div {
+		z-index: 1;
+	}
+	&.bg-over {
+		&:before {
+			background: $cBlue-over;
+			opacity: 1;
+		}
+	}
+	&.bg-color {
+		&:before {
+			background: $cBg-blue;
+			opacity: .7;
+		}
+	}
+	&.bg-grad {
+		&:before {
+			background: $cGrad-violet;
+			background: -moz-linear-gradient(left, $cGrad-violet 0%, $cGrad-teal 100%);
+			background: -webkit-linear-gradient(left, $cGrad-violet 0%,$cGrad-teal 100%);
+			background: linear-gradient(to right, $cGrad-violet 0%,$cGrad-teal 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$cGrad-violet', endColorstr='$cGrad-teal',GradientType=1 );
+			opacity: .7;
+		}
+	}
+	&.bg-grad-invert {
+		&:before {
+			background: $cGrad-teal;
+			background: -moz-linear-gradient(left, $cGrad-teal 0%, $cGrad-violet 100%);
+			background: -webkit-linear-gradient(left, $cGrad-teal 0%,$cGrad-violet 100%);
+			background: linear-gradient(to right, $cGrad-teal 0%,$cGrad-violet 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$cGrad-teal', endColorstr='$cGrad-violet',GradientType=1 );
+			opacity: .7;
+		}
+	}
+}
+.col-border {
+	border-left: 1px solid $cGray-opnew;
+	&:first-child {
+		border-left: 0;
+	}
+}
+
+.section {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	.inner-border {
+		[class*=col] {
+			border-left: 1px solid $cGray-op;
+			&:first-child {
+				border-left: 0;
+			}
+		}
+		.d-lg-block, .d-md-block {
+			border-top: 1px solid $cGray-op;
+		}
+		.d-md-block {
+		    @include media("<md") {
+				+ [class*=col] {
+					border-left: 0;
+				}
+			}
+		}
+		.d-lg-block {
+		    @include media(">md","<lg") {
+				+ [class*=col] {
+					border-left: 0;
+				}
+			}
+		    @include media(">lg") {
+				+ [class*=col] {
+					border-left: 0;
+				}
+			}
+		}
+	}
+	.bukvica {
+		padding-left: 50px;
+		position: relative;
+		i {
+			display: block;
+		    position: absolute;
+		    color: $cBlue;
+			left: 0;
+			font-size: 32px;
+			top: 8px;
+		}
+	}
+}
