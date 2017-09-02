@@ -1,28 +1,6 @@
 $(function() {
     "use strict";
 
-    $('.structure a[data-toggle="list"]').on('shown.bs.tab', function (e) {
-        $($(e.target).data('cont')).tab('show');
-        $($(e.relatedTarget).data('cont')).removeClass('active');
-    })
-
-    var mySwiper = new Swiper ('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        direction: 'vertical',
-        autoplay: 10000,
-        parallax: true,
-        loop: true,
-    })
-
-    if ($('.news-one article')) {
-        var arcticle = $('.news-one article').outerHeight();
-        console.log(arcticle);
-        if (arcticle > 620) {
-            $('.news-one .gallery').css('height', arcticle);
-        }
-    }
-
     var myWindow = $(document);
 
     var myPos = myWindow.scrollTop(),
