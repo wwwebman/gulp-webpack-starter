@@ -3,7 +3,7 @@
 // @source https://github.com/minamarkham/sassy-starter/blob/master/src/scss/utilities/_functions.scss
 
 // Unit Conversion
-// strip-unit($num)
+// -w-strip-unit($num)
 //
 // Strip units from values.
 //
@@ -25,7 +25,6 @@
 // @returns   - number
 // @source    - http://www.pjmccormick.com/sweet-sass-function-convert-px-em
 
-// WARNING STRIP-Units dont work - implement it
 @function -w-em($target, $context: $font-size-base) {
   @if not unitless($target) {
     $target: -w-strip-unit($target);
@@ -48,10 +47,10 @@
 
 @function -w-rem($target, $context: $font-size-base) {
   @if not unitless($target) {
-    $target: strip-units($target);
+    $target: -w-strip-unit($target);
   }
   @if not unitless($context) {
-    $context: strip-units($context);
+    $context: -w-strip-unit($context);
   }
   @if $target == 0 { @return 0 }
   @return $target / $context + 0rem;
@@ -69,10 +68,10 @@
 
 @function -w-px($target, $context: $font-size-base) {
   @if not unitless($target) {
-    $pxval: strip-units($target);
+    $pxval: -w-strip-unit($target);
   }
   @if not unitless($context) {
-    $base: strip-units($context);
+    $base: -w-strip-unit($context);
   }
   @if $target == 0 { @return 0 }
   @return $target * $context + 0px;
