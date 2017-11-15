@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master)](https://travis-ci.org/wwwebman/gulp-webpack-starter)
+[![Gitter](https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square)](https://gitter.im/gulp-webpack-starter/Lobby)
 
 __Gulp Webpack Starter__ - really simple and cool toolkit for building static HTML templates using Gulp task runner and Webpack bundler. This is professional Front End workflow, which help you increase your development speed & quality.
 
