@@ -44,5 +44,11 @@
       "username": "",
       "path": "/",
       "password": ""
+   },
+   "browserSync": {
+    "port": 3000,
+    "proxy": {
+      "target": ""
+    }
    }
 }

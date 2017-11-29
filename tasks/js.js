@@ -6,7 +6,7 @@ var gulp          = require('gulp');
 var webpack       = require('webpack');
 var gutil         = require('gulp-util');
 
-var webpackConfig = require('./helpers/webpackConfig')();
+var webpackConfig = require('./helpers/webpackConfig');
 var mode          = require('./helpers/mode');
 var log           = require('./helpers/logger');
 
