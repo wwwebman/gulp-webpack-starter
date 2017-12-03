@@ -1,12 +1,13 @@
 {
    "root": {
       "dev": "./dev",
-      "dist": "../"
+      "dist": "./dist"
    },
    "html": {
       "dev": "html",
       "dist": "./",
-      "parts": "templates"
+      "parts": "templates",
+      "run": true
    },
    "css": {
       "dev": "sass",
