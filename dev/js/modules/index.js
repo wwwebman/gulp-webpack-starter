@@ -1,1 +1,1 @@
-require('./helpers')
+require('./helpers');
