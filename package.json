@@ -17,9 +17,9 @@
     "url": "https://github.com/wwwebman/gulp-webpack-starter.git"
   },
   "scripts": {
-    "dev": "gulp",
-    "pro": "gulp --production",
-    "deploy": "gulp deploy --production"
+    "start": "gulp",
+    "build": "NODE_ENV=production gulp",
+    "deploy": "NODE_ENV=production gulp deploy"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
