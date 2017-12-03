@@ -22,4 +22,4 @@ var watchTask = function(){
     });
 };
 
-gulp.task('watch', ['live'], watchTask);
+gulp.task('watch', ['liveReload'], watchTask);

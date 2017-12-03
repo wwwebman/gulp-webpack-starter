@@ -1,51 +1,57 @@
 /**
- * Browser Sync & webpack middleware
+ * Browser Sync & webpack middlewares
  */
+const browserSync = require("browser-sync")
+const gulp = require("gulp")
+const path = require("path")
+const webpack = require("webpack")
+const webpackDevMiddleware = require("webpack-dev-middleware")
+const webpackHotMiddleware = require("webpack-hot-middleware")
 
-var gulp                 = require ('gulp');
-var	browserSync          = require('browser-sync');
-var webpackConfig        = require('./helpers/webpackConfig')();
-var webpack              = require('webpack');
-var compiler             = webpack(webpackConfig);
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var path                 = require('path');
+const config = require("../config")
+const mode = require("./helpers/mode")
+const webpackConfig = require("./helpers/webpackConfig")
 
-var mode                 = require('./helpers/mode');
-var config               = require("../config");
+const webpackCompiler = webpack(webpackConfig);
 
-var serverConfig = {
-	logPrefix: "webman.pro",
-    port: 3000,
+console.log(webpackConfig);
+
+let browserSyncConfig = {
+  logPrefix: "gulp-webpack-starter",
+	port: config.browserSync.port,
 	ui: {
-		port: 3001
-	}
-};
-
-
-// Run middleware only on development mode
-if(!mode.production)
-serverConfig.middleware = [
-	webpackDevMiddleware(compiler, {
-	    noInfo: true,
-	    publicPath: path.join('/', webpackConfig.output.publicPath),
-	    stats: 'errors-only'
-	}),
-	webpackHotMiddleware(compiler)
-]
-
-// Change config when we have Server
-config.proxy 
-? serverConfig.proxy = config.proxy
-: Object.assign(serverConfig, {
-	server: {
-		baseDir: config.root.dist,
+		port: config.browserSync.port++,
 	},
-	tunnel: false,
+}
+
+/**
+ * Use Proxy
+ * else create Server
+ */
+if (config.browserSync.proxy.target) {
+  browserSyncConfig.proxy = {
+    target: config.browserSync.proxy.target,
+	}
+	browserSyncConfig.files = config.browserSync.proxy.files
+} else {
+  browserSyncConfig.server = {
+    baseDir: config.root.dist,
+	}
+}
+
+if (!mode.production) {
+  browserSyncConfig.middleware = [
+    webpackDevMiddleware(webpackCompiler, {
+      publicPath: webpackConfig.output.publicPath,
+      noInfo: true,
+			stats: {
+				colors: true,
+			},
+    }),
+    webpackHotMiddleware(webpackCompiler),
+  ]
+}
+
+gulp.task("liveReload", () => {
+  browserSync.init(browserSyncConfig);
 })
-
-var live = function(){
-	browserSync.init(serverConfig);
-};
-
-gulp.task('live', live);
