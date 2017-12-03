@@ -1,26 +1,26 @@
 /**
  * Build JS
  */
+const gulp = require('gulp');
+const webpack = require('webpack');
 
-var gulp          = require('gulp');
-var webpack       = require('webpack');
+const webpackConfig = require('./webpack.config');
+const Log = require('./lib/logger');
 
-var webpackConfig = require('./helpers/webpackConfig');
-var mode          = require('./helpers/mode');
-var log           = require('./helpers/logger');
-
-gulp.task('js', function(callback){
-	webpack(webpackConfig, function(err, stats) {
-        if(err) new log('Webpack', err).error();
-        new log('Webpack',stats.toString({
-            assets: true,
-            chunks: false,
-            chunkModules: false,
-            colors: true,
-            hash: false,
-            timings: true,
-            version: false
-        })).info();
-        callback();
-    });
+gulp.task('js', (cb) => {
+  webpack(webpackConfig, (err, stats) => {
+    if (err) {
+      new Log('Webpack', err).error();
+    }
+    new Log('Webpack', stats.toString({
+      assets: true,
+      chunks: false,
+      chunkModules: false,
+      colors: true,
+      hash: false,
+      timings: true,
+      version: false,
+    })).info();
+    cb();
+  });
 });

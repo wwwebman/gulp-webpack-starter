@@ -1,15 +1,13 @@
 /**
  * Size report
  */
+const gulp = require('gulp');
+const sizereport = require('gulp-sizereport');
+const path = require('path');
 
-var gulp      = require ('gulp');
-var sizereport= require('gulp-sizereport');
-var path      = require('path');
+const config = require('./config.json');
 
-var config    = require('../config.json');
-var mode      = require('./helpers/mode');
-
-gulp.task('size', function(){
-	return gulp.src(path.join(config.root.dist, 'assets/**/*.+(css|js)'))
-    .pipe(sizereport());
-});
+gulp.task('size', () =>
+  gulp
+    .src(path.join(config.root.dist, 'assets/**/*.+(css|js)'))
+    .pipe(sizereport()));
