@@ -1,27 +1,28 @@
 /**
  * Browser Sync & webpack middlewares
  */
+const browserSync = require("browser-sync")
+const gulp = require("gulp")
+const path = require("path")
+const webpack = require("webpack")
+const webpackDevMiddleware = require("webpack-dev-middleware")
+const webpackHotMiddleware = require("webpack-hot-middleware")
 
-const browserSync = require("browser-sync");
-const gulp = require("gulp");
-const path = require("path");
-const webpack = require("webpack");
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require("webpack-hot-middleware");
-
-const config = require("../config");
-const mode = require("./helpers/mode");
-const webpackConfig = require("./helpers/webpackConfig");
+const config = require("../config")
+const mode = require("./helpers/mode")
+const webpackConfig = require("./helpers/webpackConfig")
 
 const webpackCompiler = webpack(webpackConfig);
 
+console.log(webpackConfig);
+
 let browserSyncConfig = {
   logPrefix: "gulp-webpack-starter",
-  port: config.browserSync.port,
-  ui: {
-		port: config.browserSync.portUI
-  }
-};
+	port: config.browserSync.port,
+	ui: {
+		port: config.browserSync.port++,
+	},
+}
 
 /**
  * Use Proxy
@@ -29,29 +30,28 @@ let browserSyncConfig = {
  */
 if (config.browserSync.proxy.target) {
   browserSyncConfig.proxy = {
-    target: config.browserSync.proxy.target
-	};
+    target: config.browserSync.proxy.target,
+	}
+	browserSyncConfig.files = config.browserSync.proxy.files
 } else {
   browserSyncConfig.server = {
-    baseDir: config.root.dist
-	};
+    baseDir: config.root.dist,
+	}
 }
 
 if (!mode.production) {
   browserSyncConfig.middleware = [
     webpackDevMiddleware(webpackCompiler, {
       publicPath: webpackConfig.output.publicPath,
-      noInfo: false,
-			quiet: false,
-			lazy: false,
+      noInfo: true,
 			stats: {
 				colors: true,
 			},
     }),
-    webpackHotMiddleware(webpackCompiler)
-  ];
+    webpackHotMiddleware(webpackCompiler),
+  ]
 }
 
-gulp.task("live", () => {
+gulp.task("liveReload", () => {
   browserSync.init(browserSyncConfig);
-});
+})

@@ -1,7 +1,7 @@
 {
    "root": {
       "dev": "./dev",
-      "dist": "./dist"
+      "dist": "../"
    },
    "html": {
       "dev": "html",
@@ -46,9 +46,13 @@
       "password": ""
    },
    "browserSync": {
-    "port": 3000,
+    "port": 3333,
     "proxy": {
-      "target": ""
+      "target": "",
+      "publicPath" : "",
+      "files": [
+        "../*.php"
+      ]
     }
    }
 }

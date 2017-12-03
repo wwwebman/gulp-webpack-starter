@@ -1,10 +1,12 @@
 # Javascript Project Documentation
 
 ## Example of usage
-###Vendor libs
+### Vendor libs
 ```js
-var fancybox = require("fancybox")($);
-$(document).ready(function() {
+const $ = require('jquery'); // npm install jquery
+const fancybox = require("fancybox")($);
+
+jQuery(function($) {
     $(".fancybox").fancybox();
 });
 ```

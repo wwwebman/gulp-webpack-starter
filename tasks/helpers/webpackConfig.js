@@ -1,11 +1,14 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack')
+const path = require('path')
 
-const config = require('../../config.json');
-const mode = require('./mode.js');
+const config = require('../../config.json')
+const mode = require('./mode.js')
 
-const JS_DEV = path.resolve(config.root.dev, config.js.dev);
-const JS_DIST = path.resolve(config.root.dist, config.js.dist);
+const JS_DEV = path.resolve(config.root.dev, config.js.dev)
+const JS_DIST = path.resolve(config.root.dist, config.js.dist)
+const publicPath = config.browserSync.proxy.target 
+? config.browserSync.proxy.publicPath 
+: path.join('/', config.js.dist)
 
 const webpackConfig = {
 	context: JS_DEV,
@@ -15,9 +18,9 @@ const webpackConfig = {
 		]
 	},
 	output: { 
-		path: JS_DIST,
+		path: JS_DIST,	
 		filename: 'bundle.js',
-		publicPath: config.js.dist,
+		publicPath,
 	},
 	module: {
 		rules: [
@@ -44,8 +47,8 @@ const webpackConfig = {
 		],
 		extensions: config.js.extensions,
 	},
-	plugins: []
-};
+	plugins: [],
+}
 
 /**
  * Modify webpackConfig depends on mode
