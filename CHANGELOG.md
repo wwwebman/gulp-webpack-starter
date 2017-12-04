@@ -1,7 +1,17 @@
 # Changelog
 All notable changes to GULP WEBPACK STARTER will be documented in this file.
 
-## [1.2.0] - 2017-03-12
+## [1.2.0] - 2017-05-12
 ### Added
+  - .eslint
+  - .editorconfig
+  - CHANGELOG.md
 ### Changed
-### Removed
+  - Documentation
+  - Code improved
+  - Config.json replced to /tasks/
+  - webpackConfig.js renamed to webpack.config.js and replaced to folder up
+  - Changed name of run task: `yarn dev` > `yarn stard`, `yarn pro` > `yarn build`
+### Fixed
+  - issue [GWS - 1](https://github.com/wwwebman/gulp-webpack-starter/issues/3)
+  - isuue [GWS - 2](https://github.com/wwwebman/gulp-webpack-starter/issues/4)
