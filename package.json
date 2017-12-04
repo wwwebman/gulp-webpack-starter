@@ -1,7 +1,11 @@
 {
   "name": "gulp-webpack-starter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Gulp Webpack Starter - static site builder with a lot of cool features",
+  "engines": {
+    "node": ">=8.9.1",
+    "npm": ">=5.5.0"
+  },
   "keywords": [
     "gulp",
     "webpack",
