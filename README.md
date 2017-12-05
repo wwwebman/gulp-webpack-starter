@@ -9,11 +9,11 @@
 ![Gulp Webpack Starter](http://webman.pro/assets/img/main/gulp-webpack-starter-webman.jpg)
 
 ## List of Content
-1. [Features](#features)
+1. [Features](#gift-features)
 1. [Getting Started?](#getting-started)
-    * [Recommendations](#recommendations)
-    * [Static templating](#static-templating)
-    * [Wordpress](#wordpress)
+    * [Recommendations](#closed_book-recommendations)
+    * [Static templating](#dart-static-templating)
+    * [Wordpress](#eyes-wordpress)
 1. [Configuration](#configuration)
 1. [Changelog](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CHANGELOG.md)
 1. [Contributing](#contributing)
