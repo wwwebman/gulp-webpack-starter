@@ -31,7 +31,7 @@ const webpackConfig = {
         options: {
           presets: [
             [
-              'es2015',
+              'env',
               { modules: false },
             ],
           ],
