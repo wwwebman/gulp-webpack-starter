@@ -6,7 +6,8 @@
    "html": {
       "dev": "html",
       "dist": "./",
-      "parts": "templates"
+      "parts": "templates",
+      "run": true
    },
    "css": {
       "dev": "sass",
@@ -44,5 +45,15 @@
       "username": "",
       "path": "/",
       "password": ""
+   },
+   "browserSync": {
+    "port": 3333,
+    "proxy": {
+      "target": "",
+      "publicPath" : "",
+      "files": [
+        "../*.php"
+      ]
+    }
    }
 }
