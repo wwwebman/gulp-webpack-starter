@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to GULP WEBPACK STARTER will be documented in this file.
 
-## [bugfix](https://github.com/wwwebman/gulp-webpack-starter/commits/release-1.2.0) - 2017-18-12
+## bugfix - 2017-18-12
 ### Changed
   - devDependencies updated
 ### Fixed
