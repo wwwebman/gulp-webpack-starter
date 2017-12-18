@@ -7,3 +7,7 @@ before_script:
     - sh -e /etc/init.d/xvfb start
 script:
     - "npm run build"
+os:
+    - linux
+    - windows
+    - osx
