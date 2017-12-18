@@ -10,4 +10,3 @@ script:
 os:
     - linux
     - windows
-    - osx
