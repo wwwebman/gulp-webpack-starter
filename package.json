@@ -22,14 +22,15 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "NODE_ENV=production gulp",
-    "deploy": "NODE_ENV=production gulp deploy"
+    "build": "cross-env NODE_ENV=production gulp",
+    "deploy": "cross-env NODE_ENV=production gulp deploy"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
+    "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
