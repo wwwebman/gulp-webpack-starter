@@ -99,7 +99,7 @@ yarn deploy //Push production version on remote server using FTP
 ```
 
 ### Contributing
-Contributions, questions and comments, pull requests are all welcome.  
+Contributions, [questions and comments](https://gitter.im/gulp-webpack-starter/Lobby), [issues](https://github.com/wwwebman/gulp-webpack-starter/issues), [pull requests](https://github.com/wwwebman/gulp-webpack-starter/pulls) are all welcome.  
 Let's create something cool together :raised_hand:
 
 ---
