@@ -32,11 +32,11 @@
 
 ## Getting started?
 ### :closed_book: Recommendations
-Make sure you have installed: 
+Make sure you have the following installed: 
 * [Node.js](https://nodejs.org/)
-* [npm](https://www.npmjs.com/) installed or [yarn](https://yarnpkg.com/en/)
+* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/)
   
-**Recommended to use > node 8.9.1 (last TLS version)**
+**Recommended to use node 8.9.* ([last LTS version](https://github.com/nodejs/Release#release-schedule))**
 ### :dart: Static templating
 #### Step 1 - clone
 ```bash
@@ -52,9 +52,9 @@ Easy, right?
 
 ### :eyes: Wordpress
 #### Step 1 - install Wordpress
-install Wordpress on you localhost (MAMP, LAMP)
+Install Wordpress on you localhost (MAMP, LAMP)
 #### Step 2  - create theme
-Go to exists theme folder or create your custom theme 'customTheme'.
+`cd` into your theme directory. E.g.:
 ```bash
   cd project/wp-content/themes/customTheme/
 ```
@@ -64,24 +64,24 @@ git clone https://github.com/wwwebman/gulp-webpack-starter frontEnd
 cd frontEnd
 ```
 #### Step 4  - change config
-Below an example of properties you need to be changed in **tasks/config.json***.
-1. Change the global assets output:
+Certain defaults will need to be changed in **tasks/config.json*** for WP development.
+1. Change the global assets output, since we want to export assets to the theme root directory:
 ```json 
 "dist": "../" 
 ```
-2. Stop run html task because we don't need it in Wordpress case:
+2. Disable the `html` `run` task, since we don’t need to compile HTML in this project:
 ```json
 "html": {
   "run": false
 },
 ```
-3. Now browserSync should use proxy instead of create static server:
-  * `target` should reffer to your wordpress aplication
-  * `publicPath` should refer to the folder which you putted bundle.js file. The Reason - issue [GWS - 3](https://github.com/wwwebman/gulp-webpack-starter/issues/3)
+3. Now, browserSync should use proxy instead of creating a static server:
+  * `target` should refer to the location (`pwd`) of your local WordPress installation
+  * `publicPath` should refer to the folder to which you’re outputting the `bundle.js` file. The Reason - issue [GWS - 3](https://github.com/wwwebman/gulp-webpack-starter/issues/3)
 ```json
  "proxy": {
     "target": "localhost/project",
-    "publicPath" : "http://localhost:3333/project/wp-content/themes/assets/js",
+    "publicPath" : "http://localhost:3333/project/wp-content/themes/customTheme/dist/assets/js",
   }
 ```
 #### Step 5 - run
