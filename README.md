@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master)](https://travis-ci.org/wwwebman/gulp-webpack-starter)
 [![Gitter](https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square)](https://gitter.im/gulp-webpack-starter/Lobby)
 
-**Gulp Webpack Starter** - really simple and cool toolkit for building static HTML templates using Gulp task runner and Webpack bundler. This is professional Front End workflow, which help you to increase your development speed & quality. Also you can use our starter with [Wordpress](#wordpress) or any other similar environment.
+**Gulp Webpack Starter** - A simple web-development toolkit using Gulp task runner and Webpack bundler. Ideal for building static HTML templates, speeding up [Wordpress](#wordpress) theme development, or any similar template-driven and front-end project.
 
 ![Gulp Webpack Starter](http://webman.pro/assets/img/main/gulp-webpack-starter-webman.jpg)
 
