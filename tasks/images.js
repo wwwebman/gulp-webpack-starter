@@ -14,7 +14,7 @@ const config = require('./config');
 
 gulp.task('img', () =>
   gulp
-    .src(path.join(config.root.dev, config.img.dev, '**/', config.img.extensions))
+    .src(path.join(config.root.dev, config.img.dev, config.img.extensions))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(changed(path.join(config.root.dist, config.img.dist)))
     .pipe(imagemin({
