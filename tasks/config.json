@@ -23,7 +23,7 @@
       "extensions": [".json", ".js"]
    },
    "img": {
-      "dev": "img/**/*",
+      "dev": "img/**/",
       "dist": "assets/img",
       "extensions": "*.+(jpg|jpeg|gif|png|svg)"
    },
