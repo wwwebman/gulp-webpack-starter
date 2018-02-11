@@ -17,8 +17,7 @@
     * [Wordpress](#eyes-wordpress)
 1. [Configuration](#configuration)
 1. [Changelog](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CHANGELOG.md)
-1. [Contributing](#contributing)
-    * [To open an issue](https://github.com/wwwebman/gulp-webpack-starter/issues)
+1. [Contributing](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
 
 ## :gift: Features
 |Features|Description|
@@ -99,10 +98,3 @@ yarn start //Run development mode
 yarn build //Compiles your App for production
 yarn deploy //Push production version on remote server using FTP
 ```
-
-### Contributing
-[Questions and comments](https://gitter.im/gulp-webpack-starter/Lobby), [issues](https://github.com/wwwebman/gulp-webpack-starter/issues), [pull requests](https://github.com/wwwebman/gulp-webpack-starter/pulls) are all welcome.  
-Let's create something cool [together](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTORS.md) :raised_hand:
-
----
-Author - [webman.pro](http://webman.pro/)
