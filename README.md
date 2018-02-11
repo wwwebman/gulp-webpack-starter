@@ -1,6 +1,6 @@
 # Gulp Webpack Starter :octopus:
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#contributing)
-[![GitHub contributors](https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg)](#contributing)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
+[![GitHub contributors](https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 [![Build Status](https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master)](https://travis-ci.org/wwwebman/gulp-webpack-starter)
 [![Gitter](https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square)](https://gitter.im/gulp-webpack-starter/Lobby)
