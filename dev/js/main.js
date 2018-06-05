@@ -1,1 +1,1 @@
-require('modules');
+require('./modules');
