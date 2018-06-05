@@ -47,7 +47,12 @@ const webpackConfig = {
     ],
     extensions: config.js.extensions,
   },
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+    }),
+  ],
 };
 
 /**
