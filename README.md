@@ -49,6 +49,22 @@ cd <my-project-name>
 yarn
 yarn start
 ```
+
+If `gulps` fails with error message similar to
+```
+gulp[12108]: src\node_contextify.cc:631: Assertion `args[1]->IsString()' failed. 1: node::DecodeWrite
+...
+7: v8::internal::RegExpImpl::Exec
+8: 000000BB0FF04281
+Process finished with exit code 134
+```
+
+run
+```sh
+npm i natives
+yarn start
+```
+
 Easy, right?
 
 ### :eyes: Wordpress
