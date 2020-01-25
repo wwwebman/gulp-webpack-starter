@@ -18,7 +18,7 @@ const webpackConfig = {
   context: JS_DEV,
   entry: {
     app: [
-      './main.js',
+      './index.js',
     ],
   },
   output: {
