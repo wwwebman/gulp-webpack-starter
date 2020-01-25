@@ -30,16 +30,8 @@ const webpackConfig = {
     rules: [
       {
         test: /\.js$/,
-        exclude: path.resolve(__dirname, 'node_modules/'),
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              'env',
-              { modules: false },
-            ],
-          ],
-        },
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
     ],
   },
