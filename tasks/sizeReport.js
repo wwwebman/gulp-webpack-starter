@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const sizereport = require('gulp-sizereport');
 const path = require('path');
 
-const config = require('./config.json');
+const config = require('../config');
 
 gulp.task('size', () =>
   gulp

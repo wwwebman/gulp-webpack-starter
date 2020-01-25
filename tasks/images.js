@@ -7,7 +7,7 @@ const plumber = require('gulp-plumber');
 const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('img', () =>
   gulp

@@ -5,7 +5,7 @@ const notify = require('gulp-notify');
 const path = require('path');
 const plumber = require('gulp-plumber');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('html', () =>
   gulp

@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const del = require('del');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('clean', () => {
   const folderDelete = ['js', 'css', 'img', 'svg', 'fonts'].map(asset =>

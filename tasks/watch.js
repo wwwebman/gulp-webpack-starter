@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const watch = require('gulp-watch');
 const path = require('path');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('watch', ['liveReload'], () => {
   const folders = ['css', 'img', 'svg', 'static', 'fonts', 'js'];

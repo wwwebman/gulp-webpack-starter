@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const { reload } = require('browser-sync');
 const path = require('path');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('fonts', () =>
   gulp

@@ -5,7 +5,7 @@ const plumber = require('gulp-plumber');
 const svgSprite = require('gulp-svg-sprite');
 const path = require('path');
 
-const config = require('./config');
+const config = require('../config');
 
 const svgConf = {
   shape: {

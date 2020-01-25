@@ -1,0 +1,62 @@
+
+
+module.exports = {
+  production: process.env.NODE_ENV === 'production',
+  "root": {
+    "dev": "./dev",
+    "dist": "./dist"
+  },
+  "html": {
+    "dev": "html",
+    "dist": "./",
+    "parts": "templates",
+    "run": true
+  },
+  "css": {
+    "dev": "sass",
+    "dist": "assets/css",
+    "parts": "parts",
+    "extensions": "*.+(css|scss)",
+    "uncss": false
+  },
+  "js": {
+    "dev": "js",
+    "dist": "assets/js",
+    "parts": "modules",
+    "extensions": [".json", ".js"]
+  },
+  "img": {
+    "dev": "img/**/",
+    "dist": "assets/img",
+    "extensions": "*.+(jpg|jpeg|gif|png|svg)"
+  },
+  "svg": {
+    "dev": "img/svg",
+    "dist": "assets/img"
+  },
+  "fonts": {
+    "dev": "fonts",
+    "dist": "assets/fonts",
+    "extensions": "*.+(woff2|woff|eot|ttf|svg)"
+  },
+  "static": {
+    "dev": "static",
+    "dist": "assets/static"
+  },
+  "deploy": {
+    "hostname": "",
+    "username": "",
+    "path": "/",
+    "password": ""
+  },
+  "browserSync": {
+  "port": 3333,
+  "proxy": {
+    "target": "",
+    "publicPath" : "",
+    "files": [
+      "../*.php"
+    ]
+  }
+  },
+};

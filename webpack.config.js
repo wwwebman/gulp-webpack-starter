@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = require('./config');
-const mode = require('./lib/mode');
 
 const JS_DEV = path.resolve(config.root.dev, config.js.dev);
 const JS_DIST = path.resolve(config.root.dist, config.js.dist);
@@ -11,9 +10,9 @@ const publicPath = config.browserSync.proxy.target
   : path.join('/', config.js.dist);
 
 const webpackConfig = {
-  mode: mode.production ? 'production' : 'development',
+  mode: config.production ? 'production' : 'development',
   optimization: {
-    minimize: mode.production
+    minimize: config.production
   },
   context: JS_DEV,
   entry: {
@@ -47,7 +46,7 @@ const webpackConfig = {
 };
 
 /** Modifies webpackConfig depends on mode. */
-if (mode.production) {
+if (config.production) {
   webpackConfig.plugins.push(
     new webpack.NoEmitOnErrorsPlugin(),
   );

@@ -11,11 +11,10 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uncss = require('gulp-uncss');
 
-const config = require('./config');
-const mode = require('./lib/mode');
+const config = require('../config');
 
-// Configiration for gulp-uncss plugin.
-const unCssIgnore = [
+/** Configuration for gulp-uncss plugin. */
+const defaultUnCSSIgnore = [
   /(#|\.)fancybox(-[a-zA-Z]+)?/,
   /tooltip/,
   '.modal',
@@ -35,7 +34,7 @@ const unCssIgnore = [
 gulp.task('css', () =>
   gulp
     .src(path.join(config.root.dev, config.css.dev, 'bundle.scss'))
-    .pipe(gulpif(!mode.production, sourcemaps.init()))
+    .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sass({
       includePaths: ['./node_modules', './bower_components'],
@@ -47,15 +46,14 @@ gulp.task('css', () =>
     /**
      * You can use this feature if you have a lot of vendor css/scss libs.
      * The main problem with this plugin - finding selector in js file.
-     * Use unCssIgnore to prevent removing some classes/ids.
+     * Use defaultUnCSSIgnore to prevent removing some classes/ids.
      * If you have some solution - make pull request/open issue.
      */
-
     .pipe(gulpif(
       config.css.uncss,
       uncss({
         html: glob.sync(path.join(config.root.dev, config.html.dev, './**/*.html')),
-        ignore: unCssIgnore,
+        ignore: defaultUnCSSIgnore,
       }),
     ))
 
@@ -64,11 +62,11 @@ gulp.task('css', () =>
     }))
 
     .pipe(gulpif(
-      mode.production,
+      config.production,
       minify({
         keepSpecialComments: 0,
       }),
     ))
-    .pipe(gulpif(!mode.production, sourcemaps.write()))
+    .pipe(gulpif(!config.production, sourcemaps.write()))
     .pipe(gulp.dest(path.join(config.root.dist, config.css.dist)))
     .pipe(reload({ stream: true })));

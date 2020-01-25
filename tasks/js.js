@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
 
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('../webpack.config');
 const Log = require('./lib/logger');
 
 gulp.task('js', (cb) => {
