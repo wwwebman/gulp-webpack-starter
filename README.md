@@ -78,7 +78,7 @@ Install Wordpress on you localhost (MAMP, LAMP)
 `cd` into your theme directory. E.g.:
 
 ```bash
-  cd project/wp-content/themes/[your_theme_folder]
+  cd project/wp-content/themes/[your_theme_folder_name]
 ```
 
 #### Step 3 - Clone starter
@@ -102,7 +102,7 @@ Edit `./tasks/config.json` file with following instruction:
 }
 ```
 
-Starting from now all compiled files will land to `themes/[your_theme_folder_folder]/assets`.
+Starting from now all compiled files will land to `themes/[your_theme_folder_name_folder]/assets`.
 
 2. Disable the `html` `run` task, since we don’t need to compile HTML in Wordpress:
 
@@ -124,12 +124,33 @@ Starting from now all compiled files will land to `themes/[your_theme_folder_fol
 {
   "proxy": {
     "target": "http://localhost/[your_project]",
-    "publicPath" : "http://localhost:3333/[your_project]/wp-content/themes/[your_theme_folder]/assets/js/"
+    "publicPath" : "http://localhost:3333/[your_project]/wp-content/themes/[your_theme_folder_name]/assets/js/"
   }
 }
 ```
 
+4. Double check if you attached assets in `[your_theme_folder_name]/functions.php`:
+
+```php
+function enqueue_styles()
+{
+  wp_enqueue_style('custom', get_template_directory_uri() . '/assets/css/bundle.css', [], null);
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_styles');
+
+function register_scripts()
+{
+  wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/bundle.js', [], null, true);
+}
+
+add_action('wp_enqueue_scripts', 'register_scripts');
+```
+
 #### Step 5 - run
+
+In `[your_theme_folder_name]/[your_frontend_folder_name]`
+
 
 ```bash
 yarn
