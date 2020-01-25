@@ -11,6 +11,7 @@ const publicPath = config.browserSync.proxy.target
   : path.join('/', config.js.dist);
 
 const webpackConfig = {
+  mode: mode.production ? 'production' : 'development',
   context: JS_DEV,
   entry: {
     app: [
