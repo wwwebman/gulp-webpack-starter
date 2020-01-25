@@ -1,6 +1,3 @@
-/**
- * Browser Sync & webpack middlewares
- */
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const webpack = require('webpack');

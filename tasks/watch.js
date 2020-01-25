@@ -1,6 +1,3 @@
-/**
- * WATCHER
- */
 const gulp = require('gulp');
 const watch = require('gulp-watch');
 const path = require('path');

@@ -1,6 +1,3 @@
-/**
- * Build HTML
- */
 const gulp = require('gulp');
 const { reload } = require('browser-sync');
 const fileInclude = require('gulp-file-include');

@@ -1,6 +1,3 @@
-/**
- * Build CSS
- */
 const gulp = require('gulp');
 const { reload } = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');

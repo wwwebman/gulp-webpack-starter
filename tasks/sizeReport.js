@@ -1,6 +1,3 @@
-/**
- * Size report
- */
 const gulp = require('gulp');
 const sizereport = require('gulp-sizereport');
 const path = require('path');

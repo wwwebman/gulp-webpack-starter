@@ -1,6 +1,3 @@
-/**
- * Deploy task
- */
 const gulp = require('gulp');
 const path = require('path');
 const ftp = require('vinyl-ftp');

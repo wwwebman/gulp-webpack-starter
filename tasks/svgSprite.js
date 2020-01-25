@@ -1,6 +1,3 @@
-/**
- * Build svg sprite
- */
 const gulp = require('gulp');
 const { reload } = require('browser-sync');
 const notify = require('gulp-notify');

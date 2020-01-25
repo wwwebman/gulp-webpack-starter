@@ -1,6 +1,3 @@
-/**
- * Build image assets
- */
 const gulp = require('gulp');
 const { reload } = require('browser-sync');
 const imagemin = require('gulp-imagemin');
