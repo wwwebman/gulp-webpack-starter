@@ -56,7 +56,7 @@
     "gulp-watch": "^4.3.5",
     "imagemin-pngquant": "^5.0.1",
     "path": "^0.12.7",
-    "require-dir": "^0.3.2",
+    "require-dir": "^1.2.0",
     "run-sequence": "^2.2.0",
     "vinyl-ftp": "^0.6.0",
     "webpack": "^4.41.5",
