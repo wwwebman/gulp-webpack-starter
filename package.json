@@ -49,7 +49,7 @@
     "gulp-clean-css": "^3.0.2",
     "gulp-file-include": "^2.0.0",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^4.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-prompt": "^1.0.0",
