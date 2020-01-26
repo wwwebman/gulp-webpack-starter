@@ -8,7 +8,7 @@
 
 **Gulp Webpack Starter** - A simple web-development toolkit using Gulp task runner and Webpack bundler.
 Ideal for [building static HTML templates](#dart-1-static-html-templating) 
-or [speeding up Wordpress](#eyes-2-wordpress) theme development 
+or [speeding up WordPress](#eyes-2-wordpress) theme development 
 and any similar template-driven and front-end project.
 
 ![Gulp Webpack Starter](http://webman.pro/assets/img/main/gulp-webpack-starter-webman.jpg)
@@ -19,7 +19,7 @@ and any similar template-driven and front-end project.
 1. [Getting Started?](#getting-started)
     * [Recommendations](#closed_book-recommendations)
     * [Static HTML templating](#dart-1-static-html-templating)
-    * [Wordpress](#eyes-2-wordpress)
+    * [WordPress](#eyes-2-wordpress)
 1. [Configuration](#configuration)
 1. [Changelog](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CHANGELOG.md)
 1. [Contributing](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
@@ -35,101 +35,79 @@ and any similar template-driven and front-end project.
 |HTML| [gulp-file-include](https://www.npmjs.com/package/gulp-file-include)|
 |Images| [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)|
 |SVG sprite| [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite)|
-|Deployment| [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)|
+|Deployment| [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp) - @deprecated|
 
 ## Getting started?
 
 ### :closed_book: Recommendations
 
 Make sure you have the following installed: 
-* [Node.js](https://nodejs.org/)
-* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/)
-  
-**Recommended to use Node.js >= v10.16.0**.
+* [Node.js](https://nodejs.org/)(**Recommended to use Node.js >= v10.16.0**)
+* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/). 
+In this instruction we use yarn, but you can use npm. 
 
 ## :dart: 1. Static HTML templating
 
 #### Step 1 - clone
 
 ```bash
-git clone https://github.com/wwwebman/gulp-webpack-starter <my-project-name>
-cd <my-project-name>
+git clone https://github.com/wwwebman/gulp-webpack-starter [my-static-template-project-name]
+cd [my-static-template-project-name]
 ```
 
 #### Step 2 - run
+
+`cp .env.dist .env`
 
 ```bash
 yarn
 yarn start
 ```
 
-**Pretty easy, right?**
+Start files modification under `[my-static-template-project-name]/dev/*` to feel a great 
+development experience.
+
+**Cool and pretty easy, right?**
 
 ***
 
-## :eyes: 2. Wordpress
+## :eyes: 2. WordPress
 
-#### Step 1 - Install Wordpress
+### 1. Preparation
 
-Install Wordpress on you localhost (MAMP, LAMP)
+It can be setup in a number of different ways, but we would like to describe the simplest:
 
-#### Step 2  - Create Wordpress Theme
+Please be sure of the following:
+ - WordPress website is available under `http://localhost/[awesome_wp_project]`
+ - WordPress Theme exists
 
-`cd` into your theme directory. E.g.:
-
-```bash
-  cd project/wp-content/themes/[your_theme_folder_name]
-```
-
-#### Step 3 - Clone starter
+Note: folder naming on different OS can differ.
 
 ```bash
-git clone https://github.com/wwwebman/gulp-webpack-starter [your_frontend_folder_name]
-cd [your_frontend_folder_name]
+cd [awesome_wp_project]/wp-content/themes/[theme_folder_name]
+
+git clone git@github.com:wwwebman/gulp-webpack-starter.git [frontend_folder_name]
+
+cd [frontend_folder_name]
+
+cp .env.wordpress .env
 ```
 
-#### Step 4 - Change config
+### 2. Modify .env
 
-Edit `./tasks/config.json` file with following instruction:
+##### Required
 
-1. Change the global assets output:
+Set correct values to `BROWSER_SYNC_TARGET` and `BROWSER_SYNC_PUBLIC_PATH` variables.
 
-```json
-{
-  "root": {
-    "dist": ".." 
-  }
-}
-```
+- `BROWSER_SYNC_TARGET` - refers to WordPress website installed locally
+- `BROWSER_SYNC_PUBLIC_PATH` - refers to the relative pathname of `bundle.js` in the browser.
 
-Starting from now all compiled files will land to `themes/[your_theme_folder_name_folder]/assets`.
+##### Not required
 
-2. Disable the `html` `run` task, since we don’t need to compile HTML in Wordpress:
+All compiled files land to `themes/[theme_folder_name_folder]/assets`.
+Modify `ROOT_DIST` to change the destination.
 
-```json
-{
-    "html": {
-      "run": false
-    }
-}
-```
-
-3. Now, browserSync should use proxy instead of creating a static server:
-
-  * `target` should refer to the location (`pwd`) of your local WordPress installation
-  * `publicPath` should refer to the folder to which you’re outputting the `bundle.js` file. 
-  The Reason - issue [GWS - 3](https://github.com/wwwebman/gulp-webpack-starter/issues/3).
-  
-```json
-{
-  "proxy": {
-    "target": "http://localhost/[your_project]",
-    "publicPath" : "http://localhost:3333/[your_project]/wp-content/themes/[your_theme_folder_name]/assets/js/"
-  }
-}
-```
-
-4. Double check if you attached assets in `[your_theme_folder_name]/functions.php`:
+### 3. Double check if assets attached in `[theme_folder_name]/functions.php`:
 
 ```php
 function enqueue_styles()
@@ -147,12 +125,10 @@ function register_scripts()
 add_action('wp_enqueue_scripts', 'register_scripts');
 ```
 
-#### Step 5 - run
-
-In `[your_theme_folder_name]/[your_frontend_folder_name]`
-
+#### 4. Run
 
 ```bash
+cd [theme_folder_name]/[frontend_folder_name]
 yarn
 yarn start
 ```
@@ -164,31 +140,8 @@ If you still have a problem, let us know by opening an [issue](https://github.co
 ## Commands
 
 ```bash
-yarn <script> // alternative: npm run <script>
+yarn <script>
 
-yarn start // Run development mode
-yarn build // Compiles your App for production
+yarn start // Runs development mode
+yarn build // Compiles assets in production mode
 ```
-
-### Bonus
-
-You can add credentials in `./tasks/config.json` and deploy project using FTP server.
- 
- ```json
-{
-  "deploy": {
-    "hostname": "",
-    "username": "",
-    "path": "/",
-    "password": ""
-  }
-}
-```
-
-Then use the following command:
-
-```bash
-yarn deploy 
-```
-
-

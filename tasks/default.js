@@ -3,7 +3,7 @@ const runSequence = require('run-sequence');
 
 const config = require('../config');
 
-const assets = ['img', 'fonts', 'static', 'svg'];
+const assets = ['images', 'fonts', 'static', 'svg'];
 
 /** Enable/Disable html build using config. */
 if (config.html.run) {

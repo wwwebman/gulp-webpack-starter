@@ -7,3 +7,4 @@ npm-debug.log
 /*.html
 .DS_Store
 .idea
+.env

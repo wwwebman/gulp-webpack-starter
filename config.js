@@ -1,62 +1,64 @@
+const path = require('path');
 
+require('dotenv').config();
+
+const { env } = process;
 
 module.exports = {
-  production: process.env.NODE_ENV === 'production',
-  "root": {
-    "dev": "./dev",
-    "dist": "./dist"
+  production: env.NODE_ENV === 'production',
+  root: {
+    dev: env.ROOT_DEV,
+    dist: env.ROOT_DIST,
   },
-  "html": {
-    "dev": "html",
-    "dist": "./",
-    "parts": "templates",
-    "run": true
+  html: {
+    dev: env.HTML_DEV,
+    dist: env.HTML_DIST,
+    parts: env.HTML_PARTS,
+    run: env.HTML_RUN === 'true',
   },
-  "css": {
-    "dev": "sass",
-    "dist": "assets/css",
-    "parts": "parts",
-    "extensions": "*.+(css|scss)",
-    "uncss": false
+  css: {
+    dev: env.CSS_DEV,
+    dist: env.CSS_DIST,
+    parts: env.CSS_PARTS,
+    extensions: env.CSS_EXTENTIONS,
+    uncss: env.UNCSS_RUN === 'true',
   },
-  "js": {
-    "dev": "js",
-    "dist": "assets/js",
-    "parts": "modules",
-    "extensions": [".json", ".js"]
+  js: {
+    dev: env.JS_DEV,
+    dist: env.JS_DIST,
   },
-  "img": {
-    "dev": "img/**/",
-    "dist": "assets/img",
-    "extensions": "*.+(jpg|jpeg|gif|png|svg)"
+  images: {
+    dev: env.IMAGES_DEV,
+    dist: env.IMAGES_DIST,
+    extensions: env.IMAGES_EXTENTIONS,
   },
-  "svg": {
-    "dev": "img/svg",
-    "dist": "assets/img"
+  svg: {
+    dev: env.SVG_DEV,
+    dist: env.SVG_DIST,
   },
-  "fonts": {
-    "dev": "fonts",
-    "dist": "assets/fonts",
-    "extensions": "*.+(woff2|woff|eot|ttf|svg)"
+  fonts: {
+    dev: env.FONTS_DEV,
+    dist: env.FONTS_DIST,
+    extensions: env.FONTS_EXTENTIONS,
   },
-  "static": {
-    "dev": "static",
-    "dist": "assets/static"
+  static: {
+    dev: env.STATIC_DEV,
+    dist:  env.STATIC_DIST,
   },
-  "deploy": {
-    "hostname": "",
-    "username": "",
-    "path": "/",
-    "password": ""
+  deploy: {
+    hostname: env.DEPLOY_HOSTNAME,
+    username: env.DEPLOY_USERNAME,
+    path: env.DEPLOY_PATH,
+    password: env.DEPLOY_PASSWORD,
   },
-  "browserSync": {
-  "port": 3333,
-  "proxy": {
-    "target": "",
-    "publicPath" : "",
-    "files": [
-      "../*.php"
-    ]
-  }
+  browserSync: {
+    port: Number(env.BROWSER_SYNC_PORT),
+    proxy: {
+      target: env.BROWSER_SYNC_TARGET,
+      publicPath: env.BROWSER_SYNC_PUBLIC_PATH || path.join('/', env.JS_DIST),
+      files: [
+        env.BROWSER_SYNC_FILES,
+      ],
+    },
   },
 };

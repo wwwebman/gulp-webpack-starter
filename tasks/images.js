@@ -9,11 +9,11 @@ const changed = require('gulp-changed');
 
 const config = require('../config');
 
-gulp.task('img', () =>
+gulp.task('images', () =>
   gulp
-    .src(path.join(config.root.dev, config.img.dev, config.img.extensions))
+    .src(path.join(config.root.dev, config.images.dev, config.images.extensions))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(changed(path.join(config.root.dist, config.img.dist)))
+    .pipe(changed(path.join(config.root.dist, config.images.dist)))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [
@@ -24,5 +24,5 @@ gulp.task('img', () =>
         pngquant(),
       ],
     }))
-    .pipe(gulp.dest(path.join(config.root.dist, config.img.dist)))
+    .pipe(gulp.dest(path.join(config.root.dist, config.images.dist)))
     .pipe(reload({ stream: true })));

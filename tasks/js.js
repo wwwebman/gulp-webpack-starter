@@ -9,6 +9,7 @@ gulp.task('js', (cb) => {
     if (err) {
       new Log('Webpack', err).error();
     }
+    
     new Log('Webpack', stats.toString({
       assets: true,
       chunks: false,
@@ -18,6 +19,7 @@ gulp.task('js', (cb) => {
       timings: true,
       version: false,
     })).info();
+
     cb();
   });
 });

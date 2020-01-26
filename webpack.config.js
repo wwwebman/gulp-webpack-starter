@@ -5,9 +5,6 @@ const config = require('./config');
 
 const JS_DEV = path.resolve(config.root.dev, config.js.dev);
 const JS_DIST = path.resolve(config.root.dist, config.js.dist);
-const publicPath = config.browserSync.proxy.target
-  ? config.browserSync.proxy.publicPath
-  : path.join('/', config.js.dist);
 
 const webpackConfig = {
   mode: config.production ? 'production' : 'development',
@@ -23,7 +20,7 @@ const webpackConfig = {
   output: {
     path: JS_DIST,
     filename: 'bundle.js',
-    publicPath,
+    publicPath: config.browserSync.proxy.publicPath,
   },
   module: {
     rules: [
@@ -40,7 +37,7 @@ const webpackConfig = {
       'node_modules',
       'bower_components',
     ],
-    extensions: config.js.extensions,
+    extensions: ['.js', '.json'],
   },
   plugins: [],
 };

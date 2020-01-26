@@ -1,4 +1,4 @@
-# Changelog
+ Changelog
 All notable changes to GULP WEBPACK STARTER will be documented in this file.
 
 ## bugfix - 2017-18-12
