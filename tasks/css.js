@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const { reload } = require('browser-sync');
-const autoprefixer = require('gulp-autoprefixer');
+const autoPrefixer = require('gulp-autoprefixer');
 const glob = require('glob');
 const gulpif = require('gulp-if');
 const minify = require('gulp-clean-css');
@@ -56,11 +56,7 @@ gulp.task('css', () =>
         ignore: defaultUnCSSIgnore,
       }),
     ))
-
-    .pipe(autoprefixer({
-      browsers: ['last 3 version'],
-    }))
-
+    .pipe(autoPrefixer())
     .pipe(gulpif(
       config.production,
       minify({

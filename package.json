@@ -44,7 +44,7 @@
     "eslint-plugin-import": "^2.8.0",
     "glob": "^7.1.1",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-file-include": "^2.0.0",
