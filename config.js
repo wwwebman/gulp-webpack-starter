@@ -1,11 +1,10 @@
 const path = require('path');
 
-require('dotenv').config();
-
 const { env } = process;
 
 module.exports = {
   production: env.NODE_ENV === 'production',
+  cleanFilesOutsideWorkingDir: env.CLEAN_FILES_OUTSIDE_WORKING_DIR === 'true',
   root: {
     dev: env.ROOT_DEV,
     dist: env.ROOT_DIST,

@@ -1,8 +1,4 @@
-/**
- * @author: Dmytro Chumak, http://webman.pro
- * More: https://github.com/wwwebman/gulp-webpack-starter
- * You can add any task to catalog /tasks.
-*/
+require('dotenv').config();
 
 const requireDir = require('require-dir');
 
