@@ -27,8 +27,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "cross-env NODE_ENV=production gulp",
-    "deploy": "cross-env NODE_ENV=production gulp deploy"
+    "build": "cross-env NODE_ENV=production gulp"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -64,7 +63,6 @@
     "path": "^0.12.7",
     "require-dir": "^1.2.0",
     "run-sequence": "^2.2.0",
-    "vinyl-ftp": "^0.6.0",
     "webpack": "^4.41.5",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.16.1"

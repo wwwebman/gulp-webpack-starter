@@ -34,7 +34,6 @@ and any similar template-driven and front-end project.
 |HTML| [gulp-file-include](https://www.npmjs.com/package/gulp-file-include)|
 |Images| [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)|
 |SVG sprite| [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite)|
-|Deployment| [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp) - @deprecated|
 
 ## Getting started?
 

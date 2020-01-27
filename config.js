@@ -45,12 +45,6 @@ module.exports = {
     dev: env.STATIC_DEV,
     dist: env.STATIC_DIST,
   },
-  deploy: {
-    hostname: env.DEPLOY_HOSTNAME,
-    username: env.DEPLOY_USERNAME,
-    path: env.DEPLOY_PATH,
-    password: env.DEPLOY_PASSWORD,
-  },
   browserSync: {
     port: Number(env.BROWSER_SYNC_PORT),
     proxy: {
