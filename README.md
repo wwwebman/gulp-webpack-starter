@@ -28,9 +28,8 @@ and any similar template-driven and front-end project.
 
 |Features|Description|
 |------------------|-----------|
-|CSS| [SASS](http://sass-lang.com/), [SMACSS](https://smacss.com/), [Autoprefixer](https://github.com/postcss/autoprefixer), [clean-css](https://www.npmjs.com/package/gulp-clean-css)|
+|CSS| [SASS](http://sass-lang.com/), [SMACSS](https://smacss.com/), [Autoprefixer](https://github.com/postcss/autoprefixer), [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)|
 |JS|[Webpack](https://webpack.js.org/), [Babel](http://babeljs.io/)|
-|Testing|[Jest](https://facebook.github.io/jest/)|
 |Live Reload|[BrowserSync](http://www.browsersync.io/), [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware), [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)|
 |HTML| [gulp-file-include](https://www.npmjs.com/package/gulp-file-include)|
 |Images| [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)|

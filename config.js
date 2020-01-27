@@ -18,9 +18,10 @@ module.exports = {
   css: {
     dev: env.CSS_DEV,
     dist: env.CSS_DIST,
-    parts: env.CSS_PARTS,
     extensions: env.CSS_EXTENTIONS,
-    uncss: env.UNCSS_RUN === 'true',
+    purge: env.CSS_PURGE === 'true',
+    purgeWhitelist: env.CSS_PURGE_WHITELIST ? env.CSS_PURGE_WHITELIST.split(',') : [],
+    purgeContent: env.CSS_PURGE_CONTENT ? env.CSS_PURGE_CONTENT.split(',') : [],
   },
   js: {
     dev: env.JS_DEV,
@@ -42,7 +43,7 @@ module.exports = {
   },
   static: {
     dev: env.STATIC_DEV,
-    dist:  env.STATIC_DIST,
+    dist: env.STATIC_DIST,
   },
   deploy: {
     hostname: env.DEPLOY_HOSTNAME,
@@ -56,7 +57,7 @@ module.exports = {
       target: env.BROWSER_SYNC_TARGET,
       publicPath: env.BROWSER_SYNC_PUBLIC_PATH || path.join('/', env.JS_DIST),
       files: [
-        env.BROWSER_SYNC_FILES,
+        path.join(env.ROOT_DIST, env.BROWSER_SYNC_FILES)
       ],
     },
   },

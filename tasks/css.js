@@ -1,35 +1,16 @@
-const gulp = require('gulp');
-const { reload } = require('browser-sync');
 const autoPrefixer = require('gulp-autoprefixer');
-const glob = require('glob');
+const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const minify = require('gulp-clean-css');
 const notify = require('gulp-notify');
 const path = require('path');
 const plumber = require('gulp-plumber');
+const purgecss = require('gulp-purgecss');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const uncss = require('gulp-uncss');
+const { reload } = require('browser-sync');
 
 const config = require('../config');
-
-/** Configuration for gulp-uncss plugin. */
-const defaultUnCSSIgnore = [
-  /(#|\.)fancybox(-[a-zA-Z]+)?/,
-  /tooltip/,
-  '.modal',
-  '.panel',
-  '.active',
-  '.hide',
-  '.show',
-  '.fade',
-  '.fade.in',
-  '.collapse',
-  '.collapse.in',
-  '.navbar-collapse',
-  '.navbar-collapse.in',
-  '.collapsing',
-];
 
 gulp.task('css', () =>
   gulp
@@ -42,19 +23,12 @@ gulp.task('css', () =>
       sourceMap: true,
       errLogToConsole: true,
     }))
-
-    /**
-     * You can use this feature if you have a lot of vendor css/scss libs.
-     * The main problem with this plugin - finding selector in js file.
-     * Use defaultUnCSSIgnore to prevent removing some classes/ids.
-     * If you have some solution - make pull request/open issue.
-     */
     .pipe(gulpif(
-      config.css.uncss,
-      uncss({
-        html: glob.sync(path.join(config.root.dev, config.html.dev, './**/*.html')),
-        ignore: defaultUnCSSIgnore,
-      }),
+      config.css.purge,
+      purgecss({
+        content: config.css.purgeContent,
+        whitelist: config.css.purgeWhitelist,
+      })
     ))
     .pipe(autoPrefixer())
     .pipe(gulpif(
