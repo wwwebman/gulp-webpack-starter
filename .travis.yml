@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-    - "10.16.0"
+  - "10.16.0"
 before_script:
-    # starting a GUI to run tests, per https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+  - cp .env.dist .env
+install:
+  - yarn install
 script:
-    - "yarn start"
-    - "yarn build"
+  - yarn build
 os:
-    - linux
-    - windows
+  - linux
+  - windows
