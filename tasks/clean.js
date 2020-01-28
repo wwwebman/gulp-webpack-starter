@@ -6,7 +6,7 @@ const config = require('../config');
 
 gulp.task('clean', () => {
 
-  const folderDelete = ['js', 'css', 'images', 'svg', 'fonts'].map(asset => {
+  const folderDelete = ['js', 'css', 'images', 'sprite', 'fonts'].map(asset => {
     if (!config[ asset ] || !config[ asset ].dist) {
       return new Log(
         'clear',
