@@ -1,4 +1,10 @@
-# Gulp Webpack Starter :octopus:
+<div align="center">
+    <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" />
+    <br />
+    <h1>Gulp Webpack Starter 2.0.0</h1>
+</div>
+
+<br /> 
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
@@ -6,12 +12,13 @@
 [![Build Status](https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master)](https://travis-ci.org/wwwebman/gulp-webpack-starter)
 [![Gitter](https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square)](https://gitter.im/gulp-webpack-starter/Lobby)
 
-**Gulp Webpack Starter** - A simple web-development toolkit using Gulp task runner and Webpack bundler.
-Ideal for [building static HTML templates](#dart-1-static-html-templating) 
-or [speeding up WordPress](#eyes-2-wordpress) theme development 
-and any similar template-driven and front-end project.
+**Gulp Webpack Starter** - fast and simple web development toolkit. 
+It uses Gulp task runner and Webpack bundler.
+The starter perfectly fits [building static HTML templates](#dart-1-static-html-templating) 
+or [speeding up WordPress](#eyes-2-wordpress) theme development. 
+It be included to any similar template-driven Front End project.
 
-![Gulp Webpack Starter](http://webman.pro/assets/img/main/gulp-webpack-starter-webman.jpg)
+**Easy to start, simple to develop with. Check it out! :octopus:**
 
 ## List of Content
 
@@ -139,8 +146,6 @@ If you still have a problem, let us know by opening an [issue](https://github.co
 ## Commands
 
 ```bash
-yarn <script>
-
 yarn start // Runs development mode
 yarn build // Compiles assets in production mode
 ```
