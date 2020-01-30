@@ -1,17 +1,23 @@
 const gulp = require('gulp');
-const watch = require('gulp-watch');
 const path = require('path');
+const watch = require('gulp-watch');
 
 const config = require('../config');
 
+const Log = require('./lib/logger');
+
 gulp.task('watch', ['liveReload'], () => {
-  const folders = ['css', 'images', 'svg', 'static', 'fonts', 'js'];
+  const tasksToWatch = ['css', 'images', 'sprite', 'static', 'fonts', 'js'];
 
   if (config.html.run) {
-    folders.push('html');
+    tasksToWatch.push('html');
   }
 
-  folders.forEach((task) => {
+  tasksToWatch.forEach((task) => {
+    if (!config[ task ]) {
+      return new Log('watch', `Task "${task}" is not exist.`).error();
+    }
+
     watch(path.resolve(config.root.dev, config[task].dev), () => {
       gulp.start(task);
     });
