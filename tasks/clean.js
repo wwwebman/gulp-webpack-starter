@@ -1,27 +1,27 @@
 const gulp = require('gulp');
 const del = require('del');
-const Log = require('./lib/logger');
 
 const config = require('../config');
 
-gulp.task('clean', () => {
+const Log = require('./lib/logger');
 
-  const folderDelete = ['js', 'css', 'images', 'sprite', 'fonts'].map(asset => {
-    if (!config[ asset ] || !config[ asset ].dist) {
+gulp.task('clean', () => {
+  const tasksFoldersToDelete = ['js', 'css', 'images', 'sprite', 'fonts'].map(task => {
+    if (!config[ task ] || !config[ task ].dist) {
       return new Log(
         'clear',
-        'Task is not exist or dist folder was not specified properly.'
+        `Task "${task}" is NOT exist or dist folder was not specified properly.`
       ).error();
     }
 
-    return `${config.root.dist}/${config[ asset ].dist}`;
+    return `${config.root.dist}/${config[ task ].dist}`;
   });
 
   if (config.html.run) {
-    folderDelete.push(`${config.root.dist}/${config.html.dist}/*.html`);
+    tasksFoldersToDelete.push(`${config.root.dist}/${config.html.dist}/*.html`);
   }
 
-  del.sync(folderDelete, {
+  del.sync(tasksFoldersToDelete, {
     force: config.cleanFilesOutsideWorkingDir,
   });
 });
