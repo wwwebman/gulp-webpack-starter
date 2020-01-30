@@ -1,11 +1,11 @@
+const changed = require('gulp-changed');
 const gulp = require('gulp');
-const { reload } = require('browser-sync');
-const imagemin = require('gulp-imagemin');
+const imageMin = require('gulp-imagemin');
 const notify = require('gulp-notify');
 const path = require('path');
 const plumber = require('gulp-plumber');
-const pngquant = require('imagemin-pngquant');
-const changed = require('gulp-changed');
+const pngQuant = require('imagemin-pngquant');
+const { reload } = require('browser-sync');
 
 const config = require('../config');
 
@@ -14,14 +14,14 @@ gulp.task('images', () =>
     .src(path.join(config.root.dev, config.images.dev, config.images.extensions))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(changed(path.join(config.root.dist, config.images.dist)))
-    .pipe(imagemin({
+    .pipe(imageMin({
       progressive: true,
       svgoPlugins: [
         { removeViewBox: false },
         { cleanupIDs: false },
       ],
       use: [
-        pngquant(),
+        pngQuant(),
       ],
     }))
     .pipe(gulp.dest(path.join(config.root.dist, config.images.dist)))

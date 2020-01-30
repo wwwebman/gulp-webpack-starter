@@ -17,7 +17,7 @@ const browserSyncConfig = {
   },
 };
 
-/** Uses Proxy. Otherwise creates server. */
+/** Uses Proxy. Otherwise creates a server. */
 if (config.browserSync.proxy.target) {
   browserSyncConfig.proxy = {
     target: config.browserSync.proxy.target,

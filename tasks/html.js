@@ -1,9 +1,9 @@
-const gulp = require('gulp');
-const { reload } = require('browser-sync');
 const fileInclude = require('gulp-file-include');
+const gulp = require('gulp');
 const notify = require('gulp-notify');
 const path = require('path');
 const plumber = require('gulp-plumber');
+const { reload } = require('browser-sync');
 
 const config = require('../config');
 
