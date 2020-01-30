@@ -1,12 +1,8 @@
-/**
- * Build static assets: video, favicons ...
- */
-
 const gulp = require('gulp');
-const { reload } = require('browser-sync');
 const path = require('path');
+const { reload } = require('browser-sync');
 
-const config = require('./config');
+const config = require('../config');
 
 gulp.task('static', () =>
   gulp

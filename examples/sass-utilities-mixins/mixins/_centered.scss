@@ -1,0 +1,25 @@
+@mixin center-vertically {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
+}
+
+@mixin pad-ratio($x, $y, $selector: img) {
+  position: relative;
+  padding: 0 0 percentage($y/$x) 0;
+  height: 0;
+
+  #{$selector} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin center-box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

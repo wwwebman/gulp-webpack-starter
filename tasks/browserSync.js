@@ -1,15 +1,11 @@
-/**
- * Browser Sync & webpack middlewares
- */
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-const config = require('./config');
-const mode = require('./lib/mode');
-const webpackConfig = require('./webpack.config');
+const config = require('../config');
+const webpackConfig = require('../webpack.config');
 
 const webpackCompiler = webpack(webpackConfig);
 
@@ -21,14 +17,12 @@ const browserSyncConfig = {
   },
 };
 
-/**
- * Use Proxy
- * else create Server
- */
+/** Uses Proxy. Otherwise creates a server. */
 if (config.browserSync.proxy.target) {
   browserSyncConfig.proxy = {
     target: config.browserSync.proxy.target,
   };
+
   browserSyncConfig.files = config.browserSync.proxy.files;
 } else {
   browserSyncConfig.server = {
@@ -36,10 +30,10 @@ if (config.browserSync.proxy.target) {
   };
 }
 
-if (!mode.production) {
+if (!config.production) {
   browserSyncConfig.middleware = [
     webpackDevMiddleware(webpackCompiler, {
-      publicPath: webpackConfig.output.publicPath,
+      publicPath: config.browserSync.proxy.publicPath,
       noInfo: true,
       stats: {
         colors: true,

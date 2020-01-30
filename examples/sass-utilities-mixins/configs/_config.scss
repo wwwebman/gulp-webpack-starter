@@ -1,0 +1,24 @@
+$mq: (
+  p: "print",
+  s: "screen",
+  ld: "(orientation: landscape)",
+  pt: "(orientation: portrait)",
+  hd: "handheld",
+  r2: ("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi)"),
+  r3: ("(-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx), (min-resolution: 300dpi)"),
+  ar169: ("device-aspect-ratio: 16/9")
+) !default;
+
+$zindex: (
+  null: 0,
+  back: -1000,
+  default: 1,
+  base: 1000,
+  footer: 1100,
+  header: 1000,
+  sidebar: 900,
+  drop: 1300,
+  overlay: 1400,
+  top: 1000,
+  modal: 1500
+) !default;

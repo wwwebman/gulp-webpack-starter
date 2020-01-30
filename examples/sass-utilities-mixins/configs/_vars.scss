@@ -1,0 +1,40 @@
+// Grid
+$grid-gutter-width: 30px !default;
+$grid-columns: 12 !default;
+
+// Links
+$link-hover-decoration: none !default;
+
+// Border radius
+$border-radius-base: 0 !default;
+$border-radius-medium: 6px !default;
+$border-radius-small: 3px !default;
+
+// Animation
+$timeline-base: .4s !default;
+$timeline-fast: .2s !default;
+$timeline-slow: .8s !default;
+
+// Border
+$b-s-base: 1px;
+$b-s-medium: $b-s-base*3;
+$b-s-big: $b-s-medium*2;
+
+// Padding/margin
+$padding: $grid-gutter-width/2 !default;
+$margin: $grid-gutter-width/2 !default;
+
+// Padding for elements
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 12px !default;
+
+$padding-large-vertical: 10px !default;
+$padding-large-horizontal: 16px !default;
+
+$padding-small-vertical: 5px !default;
+$padding-small-horizontal: 10px !default;
+
+// Cursor controls
+$cursor-active: pointer !default;
+$cursor-disabled: not-allowed !default;
+$cursor-resize: col-resize !default;
