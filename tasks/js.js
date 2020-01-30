@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 
 const webpackConfig = require('../webpack.config');
+
 const Log = require('./lib/logger');
 
 gulp.task('js', (cb) => {
@@ -9,7 +10,7 @@ gulp.task('js', (cb) => {
     if (err) {
       new Log('Webpack', err).error();
     }
-    
+
     new Log('Webpack', stats.toString({
       assets: true,
       chunks: false,

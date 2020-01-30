@@ -19,8 +19,8 @@ const webpackConfig = {
   },
   output: {
     path: JS_DIST,
-    filename: 'bundle.js',
-    publicPath: config.browserSync.proxy.publicPath,
+    filename: 'main.js',
+    publicPath: config.production ? '' : config.browserSync.proxy.publicPath,
   },
   module: {
     rules: [
