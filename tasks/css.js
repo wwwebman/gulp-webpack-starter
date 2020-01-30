@@ -6,6 +6,7 @@ const notify = require('gulp-notify');
 const path = require('path');
 const plumber = require('gulp-plumber');
 const purgecss = require('gulp-purgecss');
+const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const { reload } = require('browser-sync');
@@ -14,7 +15,7 @@ const config = require('../config');
 
 gulp.task('css', () =>
   gulp
-    .src(path.join(config.root.dev, config.css.dev, 'bundle.scss'))
+    .src(path.join(config.root.dev, config.css.dev, 'index.scss'))
     .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sass({
@@ -38,5 +39,6 @@ gulp.task('css', () =>
       }),
     ))
     .pipe(gulpif(!config.production, sourcemaps.write()))
+    .pipe(rename('main.css'))
     .pipe(gulp.dest(path.join(config.root.dist, config.css.dist)))
     .pipe(reload({ stream: true })));
