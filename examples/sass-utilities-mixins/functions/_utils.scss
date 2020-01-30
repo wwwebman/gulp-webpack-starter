@@ -1,0 +1,151 @@
+// Unit Conversion
+// strip-unit($num)
+//
+// Strip units from values.
+//
+// $num       - Value to be stripped.
+// @returns   - number
+// @source    - http://hugogiraudel.com/2013/08/12/sass-functions
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// em()
+//
+//  Convert pixel values to ems.
+//
+// $target    - Value to convert to ems.
+// $context   - The context the conversion is based on. Defaults to `$base-font-size`
+// @requires  - `$base-font-size` / `@strip-units`
+// @returns   - number
+// @source    - http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+@function em($target, $context: $font-size-base) {
+  @if not unitless($target) {
+    $target: strip-unit($target);
+  }
+  @if not unitless($context) {
+    $context: strip-unit($context);
+  }
+  @if $target == 0 {
+    @return 0
+  }
+  @return $target / $context + 0em;
+}
+
+// rem()
+//
+// Convert pixel values to rems.
+//
+// $target    - Value to convert to ems.
+// $context   - The context the conversion is based on. Defaults to `$base-font-size`
+// @requires  - `$base-font-size` / `@strip-units`
+// @returns   - number
+// @source    - http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+@function rem($target, $context: $font-size-base) {
+  @if not unitless($target) {
+    $target: strip-unit($target);
+  }
+  @if not unitless($context) {
+    $context: strip-unit($context);
+  }
+  @if $target == 0 {
+    @return 0
+  }
+  @return $target / $context + 0rem;
+}
+
+// px()
+//
+// Convery em values to pixels.
+//
+// $target    - Value to convert to ems.
+// $context   - The context the conversion is based on. Defaults to `$base-font-size`
+// @requires  - `$base-font-size` / `@strip-units`
+// @returns   - number
+// @source    - http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+@function px($target, $context: $font-size-base) {
+  @if not unitless($target) {
+    $pxval: strip-unit($target);
+  }
+  @if not unitless($context) {
+    $base: strip-unit($context);
+  }
+  @if $target == 0 {
+    @return 0
+  }
+  @return $target * $context + 0px;
+}
+
+// map-has-nested-keys($map)
+//
+// $map       - Parent map to get values from.
+// @returns   - boolean
+@function map-has-nested-keys($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  @return true;
+}
+
+// map-deep-get($map)
+//
+// $map       - Parent map to get values from.
+// @returns   - `$map`
+// @source    - http://www.sitepoint.com/better-solution-managing-z-index-sass/
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// z()
+//
+// @requires  - `@map-has-nested-keys` / `@map-deep-get` / `$zindex`
+// @returns   - `map-deep-get($zindex, $indexes...)`
+// @source    - http://www.sitepoint.com/extra-map-functions-sass/
+@function z($indexes...) {
+  @if not map-has-nested-keys($zindex, $indexes...) {
+    @warn 'No index found for `#{inspect($indexes...)}` in $zindex map. Property omitted.';
+  }
+  @return map-deep-get($zindex, $indexes...);
+}
+
+// bp()
+//
+// @requires  - `@map-has-nested-keys` / `@map-deep-get` / `$breakpoints`
+// @returns   - `map-deep-get($breakpoints, $point...)`
+// @source    - http://www.sitepoint.com/extra-map-functions-sass/
+@function bp($point...) {
+  @if not map-has-nested-keys($breakpoints, $point...) {
+    @warn 'No breakpoint found for `#{inspect($point...)}` in $breakpoints map. Property omitted.';
+  }
+  @return map-deep-get($breakpoints, $point...);
+}
+
+// Positive or negative integer exponents
+// @source - https://css-tricks.com/snippets/sass/power-function/
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function border($color: $white, $size: $b-s-base, $style: "solid") {
+  $border: $size + " " + $color + " " + $style;
+
+  @return #{$border};
+}

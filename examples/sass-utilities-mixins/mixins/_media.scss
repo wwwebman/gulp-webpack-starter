@@ -1,0 +1,76 @@
+@function parse-expression($expr) {
+  $val: "";
+  $width: "";
+  $result: "";
+  $is-custom: true;
+  $operator: str-slice($expr, 1, 1);
+  $equally: str-slice($expr, 2, 2);
+
+  // Checks if is $operator or $equally
+  @if ($operator == ">" or $operator == "<" and ($equally != "=")) {
+    $val: str-slice($expr, 2);
+  } @else if (($operator == ">") or ($operator == "<") and ($equally == "=")) {
+    $val: str-slice($expr, 3);
+  } @else {
+    $val: str-slice($expr, 1);
+  }
+
+  // Gets value
+  @if map-has-key($breakpoints, $val) {
+    $result: map-get($breakpoints, $val);
+  } @else if map-has-key($mq, $val) {
+    $result: map-get($mq, $val);
+    $is-custom: false;
+  } @else {
+    $result: $val;
+  }
+
+  // Gets operator
+  @if ($is-custom == true) {
+    @if (($operator == ">") and ($equally != "=")) {
+      $result: "(min-width: #{$result})";
+    } @else if (($operator == "<") and ($equally != "=")) {
+      $result: "(max-width: #{$result - 1})";
+    } @else if (($operator == "<") and ($equally == "=")) {
+      $result: "(max-width: #{$result})";
+    } @else if (($operator == ">") and ($equally == "=")) {
+      $result: "(min-width: #{$result})";
+    }
+  } @else {
+    $result: $result;
+  }
+
+  @return $result;
+}
+
+@function concat($expressions) {
+  $result: "";
+  @each $expression in $expressions {
+    @if (str-length($result) != 0) {
+      $result: $result + " and ";
+    }
+    $result: $result + $expression;
+  }
+  @return $result;
+}
+
+@mixin media($conditions...) {
+  @for $i from 1 through length($conditions) {
+    $conditions: set-nth($conditions, $i, parse-expression(nth($conditions, $i)));
+  }
+
+  $concats: concat($conditions);
+  $mq: "";
+
+  @each $concat in $concats {
+    @if (str-length($mq) != 0) {
+      $mq: $mq + ", ";
+    }
+    $mq: $mq + $concat;
+  }
+
+  @media #{$mq} {
+    @content;
+  }
+}
+

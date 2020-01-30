@@ -1,0 +1,11 @@
+@mixin make-headlines($font-size, $scale) {
+  $value: 1;
+
+  @for $i from 4 through 1 {
+    .h#{$i}, h#{$i} {
+      $value: $scale * $value;
+      font-size: ($value) + rem;
+      @content;
+    }
+  }
+}

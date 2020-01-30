@@ -23,12 +23,13 @@ and any similar template-driven and front-end project.
 1. [Configuration](#configuration)
 1. [Changelog](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CHANGELOG.md)
 1. [Contributing](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
+1. [Examples](https://github.com/wwwebman/gulp-webpack-starter/tree/master/examples)
 
 ## :gift: Features
 
 |Features|Description|
 |------------------|-----------|
-|CSS| [SASS](http://sass-lang.com/), [SMACSS](https://smacss.com/), [Autoprefixer](https://github.com/postcss/autoprefixer), [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)|
+|CSS| [SASS](http://sass-lang.com/), [Autoprefixer](https://github.com/postcss/autoprefixer), [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)|
 |JS|[Webpack](https://webpack.js.org/), [Babel](http://babeljs.io/)|
 |Live Reload|[BrowserSync](http://www.browsersync.io/), [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware), [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)|
 |HTML| [gulp-file-include](https://www.npmjs.com/package/gulp-file-include)|

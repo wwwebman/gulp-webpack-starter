@@ -1,0 +1,12 @@
+@mixin supported($feature) {
+  .#{$feature} & {
+    @content;
+  }
+}
+
+@mixin not-supported($feature) {
+  .no-js &,
+  .no-#{$feature} & {
+    @content;
+  }
+}
