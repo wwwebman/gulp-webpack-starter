@@ -67,9 +67,5 @@
     "webpack": "^4.41.5",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.16.1"
-  },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "normalize-css": "^2.3.1"
   }
 }
