@@ -2,23 +2,21 @@
     <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" />
     <br />
     <h1>Gulp Webpack Starter 2.0.0</h1>
+    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions"></a>
+    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg" alt="Contributors"></a>
+    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License"></a>
+    <a href="https://travis-ci.org/wwwebman/gulp-webpack-starter"><img src="https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master" alt="Travis CI"></a>
+    <a href="https://gitter.im/gulp-webpack-starter/Lobby"><img src="https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square" alt="Gitter Chat"></a>
 </div>
 
-<br /> 
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg)](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-[![Build Status](https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master)](https://travis-ci.org/wwwebman/gulp-webpack-starter)
-[![Gitter](https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square)](https://gitter.im/gulp-webpack-starter/Lobby)
+<br />
 
 **Gulp Webpack Starter** - fast and simple web development toolkit. 
 It uses Gulp task runner and Webpack bundler.
 The starter perfectly fits [building static HTML templates](#dart-1-static-html-templating) 
 or [speeding up WordPress](#eyes-2-wordpress) theme development. 
-It be included to any similar template-driven Front End project.
 
-**Easy to start, simple to develop with. Check it out! :octopus:**
+**Easy to start painless development. Check it out! :octopus:**
 
 ## List of Content
 
@@ -47,10 +45,10 @@ It be included to any similar template-driven Front End project.
 
 ### :closed_book: Recommendations
 
-Make sure you have the following installed: 
+Make sure you have installed the following: 
 * [Node.js](https://nodejs.org/)(**Recommended to use Node.js >= v10.16.0**)
 * [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/). 
-In this instruction we use yarn, but you can use npm. 
+In this tutorial we use yarn, but you can use npm. 
 
 ## :dart: 1. Static HTML templating
 
