@@ -35,7 +35,6 @@ const webpackConfig = {
     modules: [
       JS_DEV,
       'node_modules',
-      'bower_components',
     ],
     extensions: ['.js', '.json'],
   },

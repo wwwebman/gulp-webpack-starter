@@ -19,7 +19,7 @@ gulp.task('css', () =>
     .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sass({
-      includePaths: ['./node_modules', './bower_components'],
+      includePaths: ['./node_modules'],
       outputStyle: 'expanded',
       sourceMap: true,
       errLogToConsole: true,
