@@ -1,7 +1,7 @@
 <div align="center">
     <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" />
     <br />
-    <h1>Gulp Webpack Starter 2.0.0</h1>
+    <h1>Gulp Webpack Starter</h1>
     <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions"></a>
     <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg" alt="Contributors"></a>
     <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License"></a>
@@ -14,9 +14,12 @@
 **Gulp Webpack Starter** - fast and simple web development toolkit. 
 It uses Gulp task runner and Webpack bundler.
 The starter perfectly fits [building static HTML templates](#dart-1-static-html-templating) 
-or [speeding up WordPress](#eyes-2-wordpress) theme development. 
+or [speeding up WordPress](#eyes-2-wordpress) theme development.
 
-**Easy to start painless development. Check it out! :octopus:**
+[Version 2](https://github.com/wwwebman/gulp-webpack-starter/releases/tag/v2.0.0) is released :tada:.
+
+**Easy to start, nice to use. Check it out! :octopus:**
+___
 
 ## List of Content
 
@@ -25,10 +28,8 @@ or [speeding up WordPress](#eyes-2-wordpress) theme development.
     * [Recommendations](#closed_book-recommendations)
     * [Static HTML templating](#dart-1-static-html-templating)
     * [WordPress](#eyes-2-wordpress)
-1. [Configuration](#configuration)
-1. [Changelog](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CHANGELOG.md)
-1. [Contributing](https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md)
-1. [Examples](https://github.com/wwwebman/gulp-webpack-starter/tree/master/examples)
+1. [Contributing](./CONTRIBUTING.md)
+1. [Examples](./examples)
 
 ## :gift: Features
 
@@ -147,3 +148,8 @@ If you still have a problem, let us know by opening an [issue](https://github.co
 yarn start // Runs development mode
 yarn build // Compiles assets in production mode
 ```
+
+## License
+
+MIT License, Copyright © 2015-present, [Dmytro Chumak](https://webman.pro/about).
+See [LICENSE](./LICENSE) for more information.
