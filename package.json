@@ -30,10 +30,10 @@
     "build": "cross-env NODE_ENV=production gulp"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
-    "@babel/preset-env": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/preset-env": "7.9.0",
     "babel-core": "6.26.3",
-    "babel-loader": "8.0.6",
+    "babel-loader": "8.1.0",
     "browser-sync": "2.26.7",
     "cross-env": "7.0.2",
     "del": "5.1.0",
