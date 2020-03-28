@@ -42,7 +42,7 @@
     "eslint-config-airbnb-base": "14.1.0",
     "eslint-plugin-import": "2.20.1",
     "glob": "7.1.6",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-autoprefixer": "7.0.1",
     "gulp-changed": "4.0.2",
     "gulp-clean-css": "4.3.0",
