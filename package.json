@@ -64,7 +64,7 @@
     "path": "0.12.7",
     "require-dir": "1.2.0",
     "run-sequence": "2.2.1",
-    "webpack": "4.41.5",
+    "webpack": "4.42.1",
     "webpack-dev-middleware": "3.7.2",
     "webpack-hot-middleware": "2.25.0"
   }
