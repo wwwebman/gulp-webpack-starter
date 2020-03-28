@@ -45,7 +45,7 @@
     "gulp": "3.9.1",
     "gulp-autoprefixer": "7.0.1",
     "gulp-changed": "4.0.2",
-    "gulp-clean-css": "4.2.0",
+    "gulp-clean-css": "4.3.0",
     "gulp-file-include": "2.1.1",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
