@@ -52,7 +52,7 @@
     "gulp-notify": "3.2.0",
     "gulp-plumber": "1.2.1",
     "gulp-prompt": "1.2.0",
-    "gulp-purgecss": "2.1.0",
+    "gulp-purgecss": "2.1.2",
     "gulp-rename": "2.0.0",
     "gulp-sass": "4.0.2",
     "gulp-sizereport": "1.2.1",
