@@ -9,4 +9,3 @@ script:
   - yarn build
 os:
   - linux
-  - osx
