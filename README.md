@@ -47,7 +47,7 @@ ___
 ### :closed_book: Recommendations
 
 Make sure you have installed the following: 
-* [Node.js](https://nodejs.org/)(**Recommended to use Node.js >= v10.16.0**)
+* [Node.js](https://nodejs.org/)(**Recommended to use Node.js v10.16.0**)
 * [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/). 
 In this tutorial we use yarn, but you can use npm. 
 
