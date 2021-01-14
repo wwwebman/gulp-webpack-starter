@@ -1,14 +1,27 @@
 <div align="center">
-    <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" />
-    <br />
-    <h1>Gulp Webpack Starter</h1>
-    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions"></a>
-    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg" alt="Contributors"></a>
-    <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License"></a>
-    <a href="https://travis-ci.org/wwwebman/gulp-webpack-starter"><img src="https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master" alt="Travis CI"></a>
-    <a href="https://gitter.im/gulp-webpack-starter/Lobby"><img src="https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square" alt="Gitter Chat"></a>
+  <a href="https://webman.pro">
+    <img src="https://raw.githubusercontent.com/wwwebman/wwwebman/master/wwwebman.svg" width="50px" alt="webman.pro" valign="middle">
+     :tada:
+    <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" valign="middle" />
+  </a>
+  <br />
+  <h1>Gulp Webpack Starter</h1>
+  <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions">
+  </a>
+  <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/github/contributors/wwwebman/gulp-webpack-starter.svg" alt="Contributors">
+  </a>
+  <a href="https://github.com/wwwebman/gulp-webpack-starter/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License">
+  </a>
+  <a href="https://travis-ci.org/wwwebman/gulp-webpack-starter">
+    <img src="https://travis-ci.org/wwwebman/gulp-webpack-starter.svg?branch=master" alt="Travis CI">
+  </a>
+  <a href="https://gitter.im/gulp-webpack-starter/Lobby">
+    <img src="https://img.shields.io/gitter/room/tj/git-extras.svg?style=flat-square" alt="Gitter Chat">
+  </a>
 </div>
-
 <br />
 
 **Gulp Webpack Starter** - fast and simple web development toolkit. 
