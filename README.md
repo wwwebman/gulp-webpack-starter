@@ -164,5 +164,5 @@ yarn build // Compiles assets in production mode
 
 ## License
 
-MIT License, Copyright © 2015-present, [Dmytro Chumak](https://webman.pro/about).
+MIT License, Copyright © 2015-present, [Dmytro Chumak](https://webman.pro).
 See [LICENSE](./LICENSE) for more information.
