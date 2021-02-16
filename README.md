@@ -2,7 +2,7 @@
   <a href="https://webman.pro">
     <img src="https://raw.githubusercontent.com/wwwebman/wwwebman/master/wwwebman.svg" width="50px" alt="webman.pro" valign="middle">
      :tada:
-    <img alt="styled-components" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" valign="middle" />
+    <img alt="gulp-webpack-starter" src="https://user-images.githubusercontent.com/13425833/73493741-a2eefe00-43b3-11ea-8cae-202e646582ac.png" height="150px" valign="middle" />
   </a>
   <br />
   <h1>Gulp Webpack Starter</h1>
